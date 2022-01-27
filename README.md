@@ -1,5 +1,5 @@
 # LED Control With Gesture Using Thermo Camera
-Use hand gesture to control turn on/off LEDs and adjust brightness.
+Use hand gesture to control the on/off of LEDs and adjust brightness.
 
 ## Introduction
 Internet of things has been a major part in future homes. People like to control their house facilities without finding physical controllers or press buttons on the walls. Smarter remote control should be what we pursuit. 
@@ -9,3 +9,5 @@ In this project, we use thermo camera to identify human hands, according to diff
 The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX90640** IR Array, the sensor communicates in **I2C** bus.
 
 ## References
+https://github.com/melexis/mlx90640-library.git
+![](MLX90640-Datasheet-Melexis.pdf)
