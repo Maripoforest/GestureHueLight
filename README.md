@@ -1,5 +1,5 @@
-# LED Control With Gesture Using Thermo Camera
-Use hand gesture to control the on/off of LEDs and adjust brightness.
+# Smart Light Bulb Control via WiFi with Gesture (Using Thermo Camera)
+Use hand gesture to control the on/off of HUE light bulbs and adjust brightness.
 
 ## Introduction
 Internet of things has been a major part in future homes. People like to control their house facilities without finding physical controllers or press buttons on the walls. Smarter remote control should be what we pursuit. 
