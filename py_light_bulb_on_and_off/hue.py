@@ -1,3 +1,11 @@
+'''
+Author: enwi(https://github.com/enwi)
+Modified by: Xiangmin XU(https://github.com/Maripoforest)
+Time: Feb.8.2022
+File: hue.py
+Describe: Light bulb communication methods in py, the bridge-detection is removed for a fixed ip and identifier connection.
+'''
+
 import requests
 import socket
 import json
@@ -6,7 +14,6 @@ from time import sleep
 
 AUTH_FAILURE_RETRIES = 6
 AUTH_FAILURE_SLEEP = 10
-
 
 class Hue:
     station_ip = "192.168.0.101"
@@ -142,7 +149,6 @@ class Hue:
     #         method="PUT",
     #         data=json.dumps(state))
     #     return self
-
 
 class ExtendedColorLight:
     last_status_time = None

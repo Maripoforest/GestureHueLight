@@ -1,8 +1,8 @@
 '''
-Author: Xiangmin XU/Dong CHEN
+Author: Xiangmin XU(https://github.com/Maripoforest)/Haiyang YOU
 Time: Feb.8.2022
-File: assign1
-Describe: Assignment 1 for Course Digial Signal Processing
+File: lightonoff.py
+Describe: Adjust the state of a light bulb: on/off and brightness
 '''
 
 from hue import Hue
