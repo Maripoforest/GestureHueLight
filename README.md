@@ -1,4 +1,5 @@
-# Smart Light Bulb Control via WiFi with Gesture (Using Thermo Camera)
+# Smart Light Bulb Control via WiFi with Gesture 
+# (Using Thermo Camera)
 Use hand gesture to control the on/off of HUE light bulbs and adjust brightness.
 
 ## Introduction
