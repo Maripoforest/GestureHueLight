@@ -16,4 +16,7 @@ The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX906
 
 > [Sensor Datasheet](MLX90640-Datasheet-Melexis.pdf).
 
+## Update
+Feb.8.2022, added a python demo for wireless light bulb control. -Xiangmin XU
+
 2022.Xiangmin Xu
