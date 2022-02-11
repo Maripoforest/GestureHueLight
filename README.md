@@ -6,7 +6,7 @@ Internet of things has been a major part in future homes. People like to control
 
 In this project, we use thermo camera to identify human hands, according to different gestures we detect, LED statuses are changing between open/close/low brightness/high brightness. The whole process is real time, as the camera keeps on scanning and recognizing gestures.
 
-The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX90640** IR Array, the sensor communicates in **I2C** bus, the light bulb we use is **Philips Hue White Filament Regular A60 LED** (The Hue developer page:https://developers.meethue.com/).
+The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX90640** IR Array, the sensor communicates in **I2C** bus, the light bulb we use is **Philips Hue White Filament Regular A60 LED**.
 
 ## Project Flowchart
 ![](flowchart.svg)
@@ -15,6 +15,8 @@ The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX906
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
 
 > [Sensor Datasheet](MLX90640-Datasheet-Melexis.pdf).
+
+> [The Hue developer page](https://developers.meethue.com/).
 
 ## Update
 Feb.8.2022, added a python demo for wireless light bulb control. -Xiangmin XU
