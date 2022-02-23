@@ -9,7 +9,7 @@ In this project, we use thermo camera to identify human hands, according to diff
 The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX90640** IR Array, the sensor communicates in **I2C** bus, the light bulb we use is **Philips Hue White Filament Regular A60 LED**.
 
 ## Project Flowchart
-![](flowchart.svg)
+![](flowchart2.png)
 
 ## References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
