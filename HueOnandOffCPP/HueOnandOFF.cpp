@@ -1,3 +1,9 @@
+/*
+Arthor Xiangmin XU(Wardenfreude)
+A Hue static IP and static user on/off brightness control method
+Relies on library cpr https://github.com/libcpr/cpr.git
+*/
+
 #include <cpr/cpr.h>
 #include <iostream>
 
@@ -29,7 +35,5 @@ int main(int argc, char** argv) {
 		std::cout << r2.text << std::endl;
 	}
 
-	
-    
     return 0;
 }
