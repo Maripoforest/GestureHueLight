@@ -18,11 +18,18 @@ The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX906
 
 > [The Hue developer page](https://developers.meethue.com/).
 
-> [The cURL GitHub Page](https://github.com/curl/curl.git)
+> [The cURL Offical Page](https://https://curl.se/)
+
+Command line tool and library for transferring data with URLs. (since 1998)
+
 
 > [The cpr GitHub Page](https://github.com/curl/curl.git)
 
+CPR for C++ Requests, it is a simple wrapper around libcurl inspired by the excellent Python Requests project.
+
+
 ## Update
 Feb.8.2022, added a python demo for wireless light bulb control. -Xiangmin XU
+
 Feb.25.2022, added a C++ demo for wireless light bulb control, this demo relies on lib [cURL](https://github.com/curl/curl.git) and lib [CPR](https://github.com/curl/curl.git) which simplifies the cURL lib. -Xiangmin XU
 
