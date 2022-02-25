@@ -29,7 +29,7 @@ CPR for C++ Requests, it is a simple wrapper around libcurl inspired by the exce
 
 
 ## Update
-Feb.8.2022, added a python demo for wireless light bulb control. -Xiangmin XU
+Feb.8.2022, added a python demo for wireless light bulb control. -Xiangmin XU (Removed by Xiangmin XU on Feb 25th)
 
 Feb.25.2022, added a C++ demo for wireless light bulb control, this demo relies on lib [cURL](https://github.com/curl/curl.git) and lib [CPR](https://github.com/curl/curl.git) which simplifies the cURL lib. -Xiangmin XU
 
