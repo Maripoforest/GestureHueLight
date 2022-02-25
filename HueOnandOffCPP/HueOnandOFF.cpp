@@ -11,10 +11,10 @@ void get_user(void) {
 	// you should physically press the hue button before using this method
 	cpr::Url user{"http://192.168.0.101/api"};
 	cpr::Body user_request{"{\"devicetype\":\"Raspberrypi\"}"};
-	cpr::Response userid = cpr::Post(url, user_request);
+	cpr::Response userid = cpr::Post(user, user_request);
 	std::cout << userid.text << std::endl;
 	//id printed in terminal, modify the main func with your id.
-
+}
 
 int main(int argc, char** argv) {
 	//using get_user method to get your own user.
