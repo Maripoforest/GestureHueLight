@@ -25,11 +25,11 @@ Command line tool and library for transferring data with URLs. (since 1998)
 
 > [The cpr GitHub Page](https://github.com/curl/curl.git)
 
-CPR for C++ Requests, it is a simple wrapper around libcurl inspired by the excellent Python Requests project.
+cpr for C++ Requests, it is a simple wrapper around libcurl inspired by the excellent Python Requests project.
 
 
 ## Update
 Feb.8.2022, added a python demo for wireless light bulb control. -Xiangmin XU (Removed by Xiangmin XU on Feb 25th)
 
-Feb.25.2022, added a C++ demo for wireless light bulb control, this demo relies on lib [cURL](https://github.com/curl/curl.git) and lib [CPR](https://github.com/curl/curl.git) which simplifies the cURL lib. -Xiangmin XU
+Feb.25.2022, added a C++ demo for wireless light bulb control, this demo relies on lib [cURL](https://github.com/curl/curl.git) and lib [cpr](https://github.com/curl/curl.git) which simplifies the cURL lib. -Xiangmin XU
 
