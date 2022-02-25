@@ -138,18 +138,6 @@ class Hue:
 
         self.last_update_state = datetime.datetime.now()
 
-    # def get_station_ip(self):
-    #     response = requests.get('https://www.meethue.com/api/nupnp')
-    #     ip = json.loads(response.content)[0]["internalipaddress"]
-    #     self.station_ip = ip
-    #
-    # def set_state(self, state):
-    #     self.request(
-    #         path="/",
-    #         method="PUT",
-    #         data=json.dumps(state))
-    #     return self
-
 class ExtendedColorLight:
     last_status_time = None
     light_id = None
@@ -180,32 +168,6 @@ class ExtendedColorLight:
 
     def off(self, transitiontime=5):
         return self.set_state({"on": False, "transitiontime": transitiontime})
-
-    def ct(self, ct, transitiontime=5):
-        # set color temp in mired scale
-        return self.set_state({"ct": ct, "transitiontime": transitiontime})
-
-    def cct(self, cct, transitiontime=5):
-        # set color temp in degrees kelvin
-        return self.ct(1000000 / cct, transitiontime)
-
-    def bri(self, level, transitiontime=5):
-        # level between 0 and 255
-        return self.set_state({"bri": level, "transitiontime": transitiontime})
-
-    def toggle(self, transitiontime=5):
-        self.update_state_cache()
-        if self.state and self.state.get(
-                'state', None) and self.state["state"].get("on", None):
-            self.off(transitiontime)
-        else:
-            self.on(transitiontime)
-
-    def alert(self, type="select"):
-        return self.set_state({"alert": type})
-
-    def xy(self, x, y, transitiontime=5):
-        return self.set_state({"xy": [x, y], "transitiontime": transitiontime})
 
 
         return self.set_state(
