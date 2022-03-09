@@ -8,6 +8,7 @@ add_executable(Hue HueOnandOFF.cpp)
 
 # this project has dependencies on cpr and curl libs.
 # if you have make installed cpr locally, use the following instead of fetch content.
+
 # link_libraries(/usr/local/lib/libcpr.so)
 # include_directories(/usr/local/include)
 
