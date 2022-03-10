@@ -33,11 +33,11 @@ If you do not know your user id:
 ```
 ./Hue new
 ```
-Then press the Hue Bridge button, you will get reply like this:
+Then press the Hue Bridge button, you will get the json reply, following is an example:
 ```
 [{"success":{"username":"HmAE6GByMxd1-3Lufz77SJUTJhRgIEFQhvUkEa3E"}}]
 ```
-Copy the username, then:
+Copy the username, then you can adjust the Hue light bulb brightness:
 ```
 ./Hue user HmAE6GByMxd1-3Lufz77SJUTJhRgIEFQhvUkEa3E <brightness(integer: 0-255)>
 ```
