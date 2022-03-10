@@ -11,6 +11,27 @@ The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX906
 ## Project Flowchart
 ![](flowchart2.png)
 
+##  Hue control c++: How to use
+At the very first beginning, you should modify your Hue Bridge IP in HueOnandOFF.cpp, you can modify you user id if you know it, but it does not matter.
+
+```
+cd HueOnandOffCPP
+mkdir build && cd build
+cmake ..
+make
+```
+
+If you have modified your user id, just simple:
+```
+./Hue <brightness(integer: 0-255)>
+```
+
+If you do not know your user id:
+```
+./Hue new
+```
+Then press the Hue Bridge button.
+
 ## References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
 
