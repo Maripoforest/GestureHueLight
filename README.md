@@ -15,7 +15,14 @@ The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX906
 
 
 ##  Hue light bulb brightness control c++: How to use
-At the very first beginning, you should modify your Hue Bridge IP in HueOnandOFF.cpp, you can modify you user id if you know it, but it does not matter.
+At the very first beginning, you can modify your Hue Bridge IP and your username if you know it, you can also modify it later.
+**log.txt** :
+```
+192.168.0.100 <Your Bridge IP here>
+S7BnUlaWvwAs6dZgYErkLO8GAWdRHTdTGi1wxwL0 <Your username here>
+
+```
+After modified your IP, just:
 
 ```
 cd HueOnandOffCPP
@@ -24,12 +31,12 @@ cmake ..
 make
 ```
 
-If you have updated the .cpp file with your username, just simple:
+If you have updated the log.txt file with your username, just simple:
 ```
 ./Hue <brightness> (integer: 0-255)
 ```
 
-If you do not know your user id:
+If you do not know your username:
 ```
 ./Hue new
 ```
