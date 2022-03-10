@@ -1,6 +1,7 @@
 # Smart Light Bulb Control via WiFi with Gesture <br />(Using Thermo Camera)
 Use hand gesture to control the on/off of HUE light bulbs and adjust brightness.
 
+
 ## Introduction
 Internet of things has been a major part in future homes. People like to control their house facilities without finding physical controllers or press buttons on the walls. Smarter remote control should be what we pursuit. 
 
@@ -8,10 +9,12 @@ In this project, we use thermo camera to identify human hands, according to diff
 
 The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX90640** IR Array, the sensor communicates in **I2C** bus, the light bulb we use is **Philips Hue White Filament Regular A60 LED**.
 
+
 ## Project Flowchart
 ![](flowchart2.png)
 
-##  Hue control c++: How to use
+
+##  Hue light bulb brightness control c++: How to use
 At the very first beginning, you should modify your Hue Bridge IP in HueOnandOFF.cpp, you can modify you user id if you know it, but it does not matter.
 
 ```
@@ -30,7 +33,15 @@ If you do not know your user id:
 ```
 ./Hue new
 ```
-Then press the Hue Bridge button.
+Then press the Hue Bridge button, you will get reply like this:
+```
+[{"success":{"username":"HmAE6GByMxd1-3Lufz77SJUTJhRgIEFQhvUkEa3E"}}]
+```
+Copy the username, then:
+```
+./Hue user HmAE6GByMxd1-3Lufz77SJUTJhRgIEFQhvUkEa3E <brightness(integer: 0-255)>
+```
+
 
 ## References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
