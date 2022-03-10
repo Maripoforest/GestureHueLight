@@ -10,6 +10,7 @@ Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS 
 #include <vector>
 #include <fstream>
 
+//brightness should be 0-255, integer
 int get_brightness(std::string str) {
 
 	int judge = -1;
@@ -26,6 +27,7 @@ int get_brightness(std::string str) {
 
 }
 
+//if you do not know your username
 std::string get_user(std::string ip) {
 	// you should physically press the hue button while using this method
 
