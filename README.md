@@ -15,8 +15,8 @@ The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX906
 
 
 ##  Hue light bulb brightness control c++: How to use
-At the very first beginning, you can modify your Hue Bridge IP and your username if you know it, you can also modify it later.
-**log.txt** :
+At the very first beginning, you can modify your Hue Bridge IP and your username if you know it, you can also modify it later. If you are a new user, you can skip this part. The
+**log.txt** looks like :
 ```
 192.168.0.100 <Your Bridge IP here>
 S7BnUlaWvwAs6dZgYErkLO8GAWdRHTdTGi1wxwL0 <Your username here>
@@ -25,7 +25,7 @@ S7BnUlaWvwAs6dZgYErkLO8GAWdRHTdTGi1wxwL0 <Your username here>
 After modified your IP, just:
 
 ```
-cd HueOnandOffCPP
+cd src
 mkdir build && cd build
 cmake ..
 make
@@ -36,7 +36,7 @@ If you have updated the log.txt file with your username, just simple:
 ./Hue <brightness> (integer: 0-255)
 ```
 
-If you do not know your username:
+If you do not know your username, method **getuser** will automatically do everything for you, you just need press the physicall hue button:
 ```
 ./Hue new
 ```
@@ -44,10 +44,20 @@ Then press the Hue Bridge button, you will get the json reply, following is an e
 ```
 [{"success":{"username":"HmAE6GByMxd1-3Lufz77SJUTJhRgIEFQhvUkEa3E"}}]
 ```
-Copy the username, then you can adjust the Hue light bulb brightness:
+The IP and username are stored in log.txt, you can just go to step 2 to adjust the brightness.
+
+If you want to modify your static IP or username, you can:
 ```
-./Hue user HmAE6GByMxd1-3Lufz77SJUTJhRgIEFQhvUkEa3E 150
+./Hue user HmAE6GByMxd1-3Lufz77SJUTJhRgIEFQhvUkEa3E
 ```
+```
+./Hue ip 192.168.0.112
+```
+You can also do:
+```
+./Hue ip 192.168.0.112 user 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
+```
+to modify both IP and user mannually.
 
 
 ## References
