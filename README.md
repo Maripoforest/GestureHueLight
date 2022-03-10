@@ -24,7 +24,7 @@ cmake ..
 make
 ```
 
-If you have modified your user id, just simple:
+If you have updated the .cpp file with your username, just simple:
 ```
 ./Hue <brightness> (integer: 0-255)
 ```
