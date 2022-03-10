@@ -1,5 +1,5 @@
 /*
-Arthor: Xiangmin XU (Maripoforest)
+Arthor: Xiangmin XU (Maripoforest) Haiyang You (rhythm232)
 A Hue static IP and static user on/off brightness control method.
 Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS method that can be used to send message to the Hue light bulb api.
 */
@@ -9,6 +9,9 @@ Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS 
 #include <string>
 #include <vector>
 #include <fstream>
+
+//getip
+std::get_ip(void){}
 
 //brightness should be 0-255, integer
 int get_brightness(std::string str) {
