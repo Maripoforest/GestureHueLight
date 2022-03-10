@@ -4,12 +4,6 @@ A Hue static IP and static user on/off brightness control method.
 Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS method that can be used to send message to the Hue light bulb api.
 */
 
-/*
-Arthor: Xiangmin XU (Maripoforest)
-A Hue static IP and static user on/off brightness control method.
-Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS method that can be used to send message to the Hue light bulb api.
-*/
-
 #include <cpr/cpr.h>
 #include <iostream>
 #include <string>
