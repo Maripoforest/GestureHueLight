@@ -14,12 +14,17 @@ The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX906
 ![](flowchart2.png)
 
 ## Prerequistes
+**IMPORTANT** 
+1. To clone the lib, don't forget the **--recursive** command to also clone the submodules.
 ```
 git clone --recursive https://github.com/Maripoforest/Smart-Light-Bulb-Control-with-Gesture.git
 ```
-To clone the lib, don't forget the **--recursive** command to also clone the submodules.
-
 This project has dependencies on [cURL](https://github.com/curl/curl.git) and [cpr](https://github.com/curl/curl.git) , the cpr submodule in lib will configure both for you.
+
+2. To build cpr, we need the OPENSSL developer kit:
+```
+sudo apt-get install libssl-dev
+```
 
 ##  Hue light bulb brightness control c++: How to use
 At the very first beginning, make the executable:
