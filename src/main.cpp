@@ -4,6 +4,8 @@ A Hue static IP and static user on/off brightness control method.
 Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS method that can be used to send message to the Hue light bulb api.
 */
 
+
+#include <limits>
 #include <cpr/cpr.h>
 #include <iostream>
 #include <string>
@@ -49,8 +51,10 @@ int main(int argc, char** argv) {
 
     //New User
 	if(order == "new") {
-		user.get_ip(ip_changed);
-        user.get_user(user.userip, user_changed);
+		if (user.get_ip(ip_changed) != "NOBRIDGE"){
+        	user.get_user(user.userip, user_changed);
+		}
+		else {std::cerr << "Cannot assign new user." << std::endl;}
 	}
 
     //Manual User Modify

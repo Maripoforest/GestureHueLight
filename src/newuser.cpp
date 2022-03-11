@@ -3,6 +3,7 @@
 #include <cpr/cpr.h>
 #include <iostream>
 #include <string>
+#include <limits>
 
 newuser::newuser() {
     std::vector<std::string> lines;
@@ -22,10 +23,14 @@ std::string newuser::get_ip(bool& changed) {
     std::string ip_at = "https://discovery.meethue.com";
     cpr::Url getip{ip_at};
     cpr::Response userIP = cpr::Get(getip);
-
+    if (userIP.text == "") {
+        std::cerr << "No Bridge Found.\n" << std::endl;
+        return "NOBRIDGE";
+    }
     std::string info = userIP.text.substr(3, 2);
     if (info != "id") {
-        std::cerr << "User request failure, using default IP address.\n" << std::endl;
+        std::cerr << "User request failure.\n" << std::endl;
+        return "NOBRIDGE";
     }
     else if (info == "id") {
         int qcount = 0;
