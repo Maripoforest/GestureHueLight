@@ -19,7 +19,7 @@ git clone --recursive https://github.com/Maripoforest/Smart-Light-Bulb-Control-w
 ```
 To clone the lib, don't forget the **--recursive** command to also clone the submodules.
 
-This project has dependencies on cURL and cpr, the cpr submodule in lib will configure both for you.
+This project has dependencies on [cURL](https://github.com/curl/curl.git) and [cpr](https://github.com/curl/curl.git) , the cpr submodule in lib will configure both for you.
 
 ##  Hue light bulb brightness control c++: How to use
 At the very first beginning, you can modify your Hue Bridge IP and your username if you know it, you can also modify it later. If you are a new user, you can skip this part. The
