@@ -13,6 +13,13 @@ The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX906
 ## Project Flowchart
 ![](flowchart2.png)
 
+## Prerequistes
+```
+git clone --recursive https://github.com/Maripoforest/Smart-Light-Bulb-Control-with-Gesture.git
+```
+To clone the lib, don't forget the **--recursive** command to also clone the submodules.
+
+This project has dependencies on cURL and cpr, the cpr submodule in lib will configure both for you.
 
 ##  Hue light bulb brightness control c++: How to use
 At the very first beginning, you can modify your Hue Bridge IP and your username if you know it, you can also modify it later. If you are a new user, you can skip this part. The
@@ -25,7 +32,6 @@ S7BnUlaWvwAs6dZgYErkLO8GAWdRHTdTGi1wxwL0 <Your username here>
 After modified your IP, just:
 
 ```
-cd src
 mkdir build && cd build
 cmake ..
 make
