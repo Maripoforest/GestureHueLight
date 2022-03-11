@@ -22,13 +22,7 @@ To clone the lib, don't forget the **--recursive** command to also clone the sub
 This project has dependencies on [cURL](https://github.com/curl/curl.git) and [cpr](https://github.com/curl/curl.git) , the cpr submodule in lib will configure both for you.
 
 ##  Hue light bulb brightness control c++: How to use
-At the very first beginning, you can modify your Hue Bridge IP and your username if you know it, you can also modify it later. If you are a new user, you can skip this part. The
-**log.txt** looks like :
-```
-192.168.0.100 <Your Bridge IP here>
-S7BnUlaWvwAs6dZgYErkLO8GAWdRHTdTGi1wxwL0 <Your username here>
-```
-After modified your IP, just:
+At the very first beginning, make the executable:
 
 ```
 mkdir build && cd build
@@ -36,12 +30,7 @@ cmake ..
 make
 ```
 
-If you have updated the log.txt file with your username, just simple:
-```
-./Hue <brightness> (integer: 0-255)
-```
-
-If you do not know your username, method **getuser** will automatically do everything for you, you just need press the physicall hue button:
+If you are new user to Hue, this command will automatically set the light bulb ready for you, you just need press the physicall hue button:
 ```
 ./Hue new
 ```
@@ -62,7 +51,17 @@ You can also do:
 ```
 ./Hue ip 192.168.0.112 user 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
 ```
+Or just modify the **log.txt**:
+```
+192.168.0.100 <Your Bridge IP here>
+S7BnUlaWvwAs6dZgYErkLO8GAWdRHTdTGi1wxwL0 <Your username here>
+```
 to modify both IP and user mannually.
+
+After set IP and username, adjust the brightness like this:
+```
+./Hue 200 (<brightness>, integer, from 0-255, 0 means off)
+```
 
 
 ## References
