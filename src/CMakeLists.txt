@@ -4,7 +4,7 @@ project(Hue)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/..)
 
-add_executable(Hue HueOnandOFF.cpp)
+add_executable(Hue main.cpp newuser.cpp fileop.cpp)
 
 # this project has dependencies on cpr and curl libs.
 # if you have make installed cpr locally, use the following instead of fetch content.

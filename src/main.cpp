@@ -9,9 +9,8 @@ Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS 
 #include <string>
 #include <vector>
 #include <fstream>
-
-//getip
-std::string get_ip(void){}
+#include "fileop.h"
+#include "newuser.h"
 
 //brightness should be 0-255, integer
 int get_brightness(std::string str) {
@@ -27,84 +26,56 @@ int get_brightness(std::string str) {
 		std::cerr << "No valid brightness input, please input integer between 0-255.\n";
 	}
 	return judge;
-
-}
-
-//if you do not know your username
-std::string get_user(std::string ip) {
-	// you should physically press the hue button while using this method
-
-	std::cout << "Please press the physical hue button,\npress Enter to continue." << std::endl;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-
-	std::string yourapi = "http://" + ip + "/api";
-	cpr::Url user{yourapi};
-	cpr::Body user_request{"{\"devicetype\":\"Raspberrypi\"}"};
-
-	cpr::Response userid = cpr::Post(user, user_request);
-	std::cout << userid.text << std::endl;
-	//id printed in terminal, modify the main func with your id.
-	std::string username = userid.text.substr(25, 40);
-	return username;
 }
 
 int main(int argc, char** argv) {
-	
-	//get the static ip and username
-	std::string filename("../log.txt");
 
-	std::ifstream input_file(filename);
-	std::vector<std::string> lines;
-    std::string line;
+    std::string filename("../log.txt");
+    std::vector<std::string> lines;
+    newuser user;
+    
+    logfile log(filename);
+    
+    log.readfile(lines);
+    user.userip = lines[0];
+    user.username = lines[1];
+    //std::cout << user.userip << user.username << std::endl;
 
-	bool ip_changed = false;
+    bool ip_changed = false;
 	bool user_changed = false;
 
-    if (!input_file.is_open()) {
-        std::cerr << "Could not open the file - '"
-             << filename << "'" << std::endl;
-        return EXIT_FAILURE;
-    }
-
-	while (std::getline(input_file, line)){
-        lines.push_back(line);
-    }
-
-	std::string IP = lines[0];
-	std::string username = lines[1];
-	input_file.close();
-
-	int judge = -1;
+    int judge = -1;
 	std::string order = argv[1];
 
-
-	//New User
+    //New User
 	if(order == "new") {
-		std::cout << "get user\n";
-		username = get_user(IP);
-		user_changed = true;
-		std::cout << "New" << std::endl;
+		user.get_ip(ip_changed);
+        user.get_user(user.userip, user_changed);
 	}
 
-	//Manual User Modify
+    //Manual User Modify
 	else if(order == "user") {
-		user_changed = true;
+
 		if (argc == 3) {
-			username = argv[2];
+			user.username = argv[2];
+            user_changed = true;
 		}
 		else if (argc == 4) {
-			username = argv[2];
+			user.username = argv[2];
+            user_changed = true;
 			judge = get_brightness(argv[3]);
 		}
 		else if (argc == 5) {
-			username = argv[2];
+			user.username = argv[2];
+            user_changed = true;
 			std::string order2 = argv[3];
-			if (order2 == "ip") { IP = argv[4]; ip_changed = true; } 
+			if (order2 == "ip") { user.userip = argv[4]; ip_changed = true; } 
 		}
 		else if (argc == 6) {
-			username = argv[2];
+			user.username = argv[2];
+            user_changed = true;
 			std::string order2 = argv[3];
-			if (order2 == "ip") { IP = argv[4]; ip_changed = true; } 
+			if (order2 == "ip") { user.userip = argv[4]; ip_changed = true; } 
 			judge = get_brightness(argv[5]);
 		}
 		else {
@@ -112,37 +83,46 @@ int main(int argc, char** argv) {
 		}	
 	}
 
-	else if(order == "ip") {
-		ip_changed = true;
+    //Manual IP modify
+    else if(order == "ip") {
+
 		if (argc == 3) {
-			IP = argv[2];
+			user.userip = argv[2];
+            ip_changed = true;
 		}
 		else if (argc == 4) {
-			IP = argv[2];
+			user.userip = argv[2];
+            ip_changed = true;
 			judge = get_brightness(argv[3]);
 		}
 		else if (argc == 5) {
-			IP = argv[2];
+			user.userip = argv[2];
+            ip_changed = true;
 			std::string order2 = argv[3];
-			if (order2 == "user") { username = argv[4]; user_changed = true; } 
+			if (order2 == "user") { user.username = argv[4]; user_changed = true; } 
 		}
 		else if (argc == 6) {
-			IP = argv[2];
+			user.userip = argv[2];
+            ip_changed = true;
 			std::string order2 = argv[3];
-			if (order2 == "user") { username = argv[4]; user_changed = true; } 
+			if (order2 == "user") { user.username = argv[4]; user_changed = true; } 
 			judge = get_brightness(argv[5]);
 		}
 		else {
 			std::cerr << "No IP input! Please paste the bridge <IP address> after \"ip\"" << std::endl;
 		}
 	}
-	else if(order != "new" && order != "user" && order != "ip") {
+
+    //Only brightness orders
+    else if(order != "new" && order != "user" && order != "ip") {
 		judge = get_brightness(argv[1]);
 	}
 
-	std::string api = "http://" + IP + "/api/" + username + "/lights/1/state";
-	
-	if (ip_changed || user_changed) {
+    //hue api address
+    std::string api = "http://" + user.userip + "/api/" + user.username + "/lights/1/state";
+
+    //change log.txt if ip or username modified
+    if (ip_changed || user_changed) {
 		if (ip_changed) {
 			std::cout << "IP Modified" << std::endl;
 		}
@@ -150,14 +130,14 @@ int main(int argc, char** argv) {
 			std::cout << "username Modified" << std::endl;
 		}
 		std::ofstream output_file(filename, std::ios::trunc);
-		output_file << IP << "\n" << username;
+		output_file << user.userip << "\n" << user.username;
 		output_file.close();
 	}
-	
 
-	cpr::Url url{api};
+    //using cpr to send json message to hue
+    cpr::Url url{api};
 
-	if (judge == 0){
+    if (judge == 0){
 		cpr::Body body1{"{\"on\": false}"};  		// JSON text string
 		cpr::Response r1 = cpr::Put(url, body1);                  
 		std::cout << r1.text<< std::endl;
@@ -166,6 +146,7 @@ int main(int argc, char** argv) {
 		}
 		else {std::cerr << "No response from bridge!" << std::endl;}
 	}
+
 	else if (judge > 0) {
 		std::string msg = "{\"on\": true, \"bri\":"+ std::to_string(judge) +"}";
 		cpr::Body body2{msg};
@@ -176,8 +157,5 @@ int main(int argc, char** argv) {
 		}
 		else {std::cerr << "No response from bridge!" << std::endl;}
 	}
-
-    return 0;
+    return EXIT_SUCCESS;
 }
-
-	
