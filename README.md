@@ -66,8 +66,9 @@ to modify both IP and user mannually.
 
 After set IP and username, adjust the brightness like this:
 ```
-./Hue 200 (<brightness>, integer, from 0-255, 0 means off)
+./Hue 200
 ```
+<brightness> is integer, from 0-255, 0 means off.
 
 
 ## References
