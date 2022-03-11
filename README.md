@@ -27,7 +27,6 @@ At the very first beginning, you can modify your Hue Bridge IP and your username
 ```
 192.168.0.100 <Your Bridge IP here>
 S7BnUlaWvwAs6dZgYErkLO8GAWdRHTdTGi1wxwL0 <Your username here>
-
 ```
 After modified your IP, just:
 
