@@ -21,6 +21,7 @@ git clone --recursive https://github.com/Maripoforest/Smart-Light-Bulb-Control-w
 ```
 This project has dependencies on [cURL](https://github.com/curl/curl.git) and [cpr](https://github.com/curl/curl.git) , the cpr submodule in lib will configure both for you.
 
+
 2. To build cpr, we need the OPENSSL developer kit:
 ```
 sudo apt-get install libssl-dev
