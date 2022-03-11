@@ -11,7 +11,7 @@ Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS 
 #include <fstream>
 
 //getip
-std::get_ip(void){}
+std::string get_ip(void){}
 
 //brightness should be 0-255, integer
 int get_brightness(std::string str) {
