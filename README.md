@@ -68,7 +68,7 @@ After set IP and username, adjust the brightness like this:
 ```
 ./Hue 200
 ```
-<brightness> is integer, from 0-255, 0 means off.
+**200** is brightness, integer, from 0-255, 0 means off.
 
 
 ## References
