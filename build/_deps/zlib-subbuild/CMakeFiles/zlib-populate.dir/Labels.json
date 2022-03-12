@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/CMakeFiles/zlib-populate"
+		},
+		{
+			"file" : "/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/CMakeFiles/zlib-populate.rule"
+		},
+		{
+			"file" : "/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/CMakeFiles/zlib-populate-complete.rule"
+		},
+		{
+			"file" : "/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/zlib-populate-prefix/src/zlib-populate-stamp/zlib-populate-install.rule"
+		},
+		{
+			"file" : "/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/zlib-populate-prefix/src/zlib-populate-stamp/zlib-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/zlib-populate-prefix/src/zlib-populate-stamp/zlib-populate-download.rule"
+		},
+		{
+			"file" : "/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/zlib-populate-prefix/src/zlib-populate-stamp/zlib-populate-update.rule"
+		},
+		{
+			"file" : "/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/zlib-populate-prefix/src/zlib-populate-stamp/zlib-populate-patch.rule"
+		},
+		{
+			"file" : "/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/zlib-populate-prefix/src/zlib-populate-stamp/zlib-populate-configure.rule"
+		},
+		{
+			"file" : "/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/zlib-populate-prefix/src/zlib-populate-stamp/zlib-populate-build.rule"
+		},
+		{
+			"file" : "/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/zlib-populate-prefix/src/zlib-populate-stamp/zlib-populate-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"zlib-populate"
+		],
+		"name" : "zlib-populate"
+	}
+}
