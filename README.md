@@ -44,7 +44,7 @@ Then press the Hue Bridge button, you will get the json reply, following is an e
 ```
 [{"success":{"username":"HmAE6GByMxd1-3Lufz77SJUTJhRgIEFQhvUkEa3E"}}]
 ```
-The IP and username are stored in log.txt, you can just go to step 2 to adjust the brightness.
+The IP and username are stored in log.txt, you can just go to the last step to adjust the brightness.
 
 If you want to modify your static IP or username, you can:
 ```
