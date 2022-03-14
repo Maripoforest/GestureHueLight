@@ -26,6 +26,7 @@ int get_brightness(std::string str) {
 		}
 	}catch(...) {
 		std::cerr << "No valid brightness input, please input integer between 0-255.\n";
+		return -1;
 	}
 	return judge;
 }
