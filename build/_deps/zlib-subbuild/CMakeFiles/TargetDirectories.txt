@@ -1,3 +1,0 @@
-/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/CMakeFiles/edit_cache.dir
-/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/CMakeFiles/rebuild_cache.dir
-/home/rhythm232/Desktop/gittest/Smart-Light-Bulb-Control-with-Gesture/build/_deps/zlib-subbuild/CMakeFiles/zlib-populate.dir
