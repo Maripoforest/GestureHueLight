@@ -1,6 +1,9 @@
 [submodule "lib/cpr"]
 	path = lib/cpr
 	url = https://github.com/libcpr/cpr.git
-[submodule "lib/mlx90640-library"]
-	path = lib/mlx90640-library
-	url = https://github.com/melexis/mlx90640-library.git
+
+
+
+[submodule "mlx90640-library"]
+	path = mlx90640-library
+	url = https://github.com/pimoroni/mlx90640-library.git
