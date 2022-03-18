@@ -1,8 +1,0 @@
-/home/rhythm232/Desktop/gittest/pixel/CMakeFiles/install/strip.dir
-/home/rhythm232/Desktop/gittest/pixel/CMakeFiles/install/local.dir
-/home/rhythm232/Desktop/gittest/pixel/CMakeFiles/install.dir
-/home/rhythm232/Desktop/gittest/pixel/CMakeFiles/list_install_components.dir
-/home/rhythm232/Desktop/gittest/pixel/CMakeFiles/rebuild_cache.dir
-/home/rhythm232/Desktop/gittest/pixel/CMakeFiles/edit_cache.dir
-/home/rhythm232/Desktop/gittest/pixel/CMakeFiles/demo05.dir
-/home/rhythm232/Desktop/gittest/pixel/CMakeFiles/demo05_autogen.dir
