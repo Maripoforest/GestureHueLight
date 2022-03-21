@@ -1,3 +1,9 @@
+/*
+Arthor: Xiangmin XU (Maripoforest) Haiyang You (rhythm232)
+A Hue static IP and static user on/off brightness control method.
+Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS method that can be used to send message to the Hue light bulb api.
+*/
+
 #include "newuser.h"
 #include "fileop.h"
 #include <cpr/cpr.h>
