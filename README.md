@@ -27,6 +27,11 @@ This project has dependencies on [cURL](https://github.com/curl/curl.git) and [c
 sudo apt-get install libssl-dev
 ```
 
+3. To use the I2C bus, make sure the linux I2C dev library is installed:
+```
+sudo apt-get install libi2c-dev
+```
+
 ##  Hue light bulb brightness control c++: How to use
 At the very first beginning, make the executable:
 
@@ -70,6 +75,15 @@ After set IP and username, adjust the brightness like this:
 ```
 **200** is brightness, integer, from 0-255, 0 means off.
 
+## MLX90640 Sensor: How to use:
+```
+mkdir build && cd build
+cmake ..
+make
+sudo ./sensor
+```
+![](LeftHand_OpenPalm.jpg)
+
 
 ## References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
@@ -92,4 +106,6 @@ cpr for C++ Requests, it is a simple wrapper around libcurl inspired by the exce
 Feb.8.2022, added a python demo for wireless light bulb control. -Xiangmin XU (Removed by Xiangmin XU on Feb 25th)
 
 Feb.25.2022, added a C++ demo for wireless light bulb control, this demo relies on lib [cURL](https://github.com/curl/curl.git) and lib [cpr](https://github.com/curl/curl.git) which simplifies the cURL lib. -Xiangmin XU
+
+
 
