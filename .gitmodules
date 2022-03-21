@@ -2,3 +2,6 @@
 	path = lib/cpr
 	url = https://github.com/libcpr/cpr.git
 
+[submodule "lib/mlx90640-library"]
+	path = lib/mlx90640-library
+	url = https://github.com/Maripoforest/mlx90640-library.git
