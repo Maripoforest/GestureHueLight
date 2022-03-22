@@ -7,6 +7,7 @@
 #include <QPushButton>
 #include <QBoxLayout>
 #include <qwt/qwt_plot.h>
+#include <qwt/qwt_thermo.h>
  
 class MyWidget : public QWidget
 {
@@ -24,9 +25,10 @@ protected:
    
 signals:
 private:
-    QPushButton *button;
+    QPushButton  *button;
+    QwtThermo    *thermo;
     QVBoxLayout  *vLayout;  // vertical layout
-QHBoxLayout  *hLayout;  // horizontal layout
+    QHBoxLayout  *hLayout;  // horizontal layout
     QwtPlot *plot;
 
     int intervalTime = 200;
