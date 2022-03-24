@@ -7,18 +7,34 @@ include_directories(../lib/mlx90640-library/headers)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/..)
 set(MYMLXLIB ../lib/mlx90640-library/functions)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+find_package(Qt5 COMPONENTS Widgets Gui REQUIRED)
+
 add_executable(Hue 
 		main.cpp 
 		newuser.cpp 
 		fileop.cpp)
 	
 add_executable(sensor
-		test.cpp 
+		main2.cpp 
 		${MYMLXLIB}/MLX90640_API.cpp 
-		${MYMLXLIB}/MLX90640_I2C_Driver.cpp) 
+		${MYMLXLIB}/MLX90640_I2C_Driver.cpp
+		mywidget.cpp) 
 
 
 target_link_libraries(Hue PRIVATE cpr)
+
+target_link_libraries(sensor Qt5::Widgets)
+target_link_libraries(sensor Qt5::Gui)
+target_link_libraries(sensor qwt-qt5)
+
+# install(TARGETS sensor)
+
 
 # this project has dependencies on cpr and curl libs.
 # if you have make installed cpr locally, use the following instead of fetch content.
