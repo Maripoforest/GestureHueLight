@@ -9,15 +9,7 @@
 #include <qwt/qwt_plot_curve.h>
 #include <cmath>
 
-using namespace std;
-
 extern bool read_data;
-double pixel_max =0;
-int Pixel =0;
-float temp;
-int colorR = 0;
-int colorG = 0;
-int colorB = 0;
 
 MyWidget::MyWidget () {
 
@@ -42,8 +34,9 @@ void MyWidget::paintEvent(QPaintEvent *event){
         QPainter painter(this);
                 for(int i = 0;i<32;i++) {
                         for(int j = 0;j<24;j++) {
-                                Pixel = this->pixel[i][j];
-	                  
+                                Pixel = pixel[i][j] / 38 * 255;
+                                Pixel = (Pixel > 255) ? 255 : Pixel;
+                                Pixel = (Pixel < 0) ? 0 : Pixel;
 	                        // cout << "Pixel = " << Pixel << endl;
                                 if(Pixel>=0 && Pixel <= 63) {
 			         	colorR = 0;

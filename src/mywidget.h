@@ -15,7 +15,7 @@ class MyWidget : public QWidget
 
 public:
     MyWidget();
-    int pixel[32][24] = {0};
+    float pixel[32][24] = {0};
  
 protected:
     void paintEvent(QPaintEvent* event);
@@ -31,7 +31,13 @@ private:
     QwtPlot      *plot;     /* not used in this graph, comment shall we ? */
 
     int intervalTime = 1000;
-
+    double pixel_max =0;
+    float Pixel =0;  
+    float temp;
+    int colorR = 0;
+    int colorG = 0;
+    int colorB = 0;
+    
     void reset();
 
 public slots:
