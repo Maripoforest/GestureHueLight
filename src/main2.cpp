@@ -46,6 +46,7 @@ void fakeframe(int data[][24]) {
                 for (int j=0;j<24;j++) {
                     c = (0 + rand() % (j + i + 1));
                     data[i][j] = i + j - c;
+                    // data[i][j] = mlx90640To[32 * (23-j) + i];
                     // std::cout << data[i][j] << std::endl;
                 }
             }
@@ -54,7 +55,7 @@ void fakeframe(int data[][24]) {
     }
 }
 
-void getframe(void){
+void getframe(int data[][24]){
 	while (1){
         MLX90640_GetFrameData(MLX_I2C_ADDR, frame);
         // MLX90640_InterpolateOutliers(frame, eeMLX90640);
@@ -64,7 +65,16 @@ void getframe(void){
 
         MLX90640_BadPixelsCorrection((&mlx90640)->brokenPixels, mlx90640To, 1, &mlx90640);
         MLX90640_BadPixelsCorrection((&mlx90640)->outlierPixels, mlx90640To, 1, &mlx90640);
-
+        
+        if (read_data) {
+            for (int i=0;i<32;i++) {
+                for (int j=0;j<24;j++) {
+                    data[i][j] = mlx90640To[32 * (23-j) + i];
+                    // std::cout << data[i][j] << std::endl;
+                }
+            }
+            read_data = !read_data;
+        }
         //std::cout << "Subpage: " << subpage <<std::endl;
         //MLX90640_SetSubPage(MLX_I2C_ADDR,!subpage);
 
@@ -124,7 +134,7 @@ int main(int argc, char** argv) {
     static uint16_t eeMLX90640[832];
     float emissivity = 1;
     
-    static float image[768];
+    // static float image[768];
     float eTa;
     static uint16_t data[768*sizeof(float)];
 
@@ -144,7 +154,7 @@ int main(int argc, char** argv) {
     int refresh = MLX90640_GetRefreshRate(MLX_I2C_ADDR);
     std::cout << "EE Dumped...\n";
 	
-    std::thread sensor(fakeframe, myWidget.pixel);
+    std::thread sensor(getframe, myWidget.pixel);
     app.exec();
     sensor.join();
 	

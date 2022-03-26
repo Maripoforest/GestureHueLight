@@ -95,10 +95,10 @@ void MyWidget::reset() {
         for(int i = 0;i<32;i++) {
                 for(int j = 0;j<24;j++) {
                         this->pixel[i][j] = 0;
-                        cout << this->pixel[i][j] << endl;
+                        // cout << this->pixel[i][j] << endl;
                 }
         }
-        read_data = true;
+        // read_data = true;
         this->update();
 }
 
