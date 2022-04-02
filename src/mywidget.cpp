@@ -14,24 +14,19 @@ extern bool read_data;
 MyWidget::MyWidget () {
 
         button = new QPushButton("Reset");
-        button->move(650,300);
+        button->move(450,470);
         button->setParent(this);
         button->resize(60, 20);
         connect(button, &QPushButton::clicked, this, &MyWidget::reset);
        
         startTimer(this->intervalTime);
-        resize(720, 470);
+        resize(750, 750);
 
 	thermo = new QwtThermo;
-	thermo->move(650,20);
+	thermo->move(680,100);
 	thermo->setParent(this);
-	thermo->setFillBrush( QBrush(Qt::blue) );
-	thermo->setScale(0,40);
-	thermo->setScaleMaxMajor(30);
-        thermo->setAlarmEnabled(true);
-        thermo->setAlarmBrush(Qt::red);
-        thermo->setAlarmLevel(30);
-
+	thermo->setFillBrush( QBrush(Qt::red) );
+	thermo->setScale(40,300);
 	thermo->show();
 }
 

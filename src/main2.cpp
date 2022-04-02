@@ -64,6 +64,7 @@ void getframe(float data[][24]){
             }
             read_data = !read_data;
         }
+        // ansi_print(mlx90640To);
         //std::cout << "Subpage: " << subpage <<std::endl;
         //MLX90640_SetSubPage(MLX_I2C_ADDR,!subpage);
     }

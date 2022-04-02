@@ -24,7 +24,8 @@ add_executable(sensor
 		main2.cpp 
 		${MYMLXLIB}/MLX90640_API.cpp 
 		${MYMLXLIB}/MLX90640_I2C_Driver.cpp
-		mywidget.cpp) 
+		mywidget.cpp
+		ansiprint.cpp) 
 
 
 target_link_libraries(Hue PRIVATE cpr)

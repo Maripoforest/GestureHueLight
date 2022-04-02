@@ -30,7 +30,7 @@ private:
     QHBoxLayout  *hLayout;  // horizontal layout
     QwtPlot      *plot;     /* not used in this graph, comment shall we ? */
 
-    int intervalTime = 1000;
+    int intervalTime = 200;
     double pixel_max =0;
     float Pixel =0;  
     float temp;
