@@ -32,7 +32,8 @@ sudo apt-get install libssl-dev
 sudo apt-get install libi2c-dev
 ```
 
-##  Hue light bulb brightness control c++: How to use
+## The Project contains a main program, and two seperate programs for Hue control and sensor comm.
+###  Hue light bulb brightness control c++: How to use
 At the very first beginning, make the executable:
 
 ```
@@ -75,7 +76,7 @@ After set IP and username, adjust the brightness like this:
 ```
 **200** is brightness, integer, from 0-255, 0 means off.
 
-## MLX90640 Sensor: How to use:
+### MLX90640 Sensor: How to use:
 ```
 mkdir build && cd build
 cmake ..
