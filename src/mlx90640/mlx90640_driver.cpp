@@ -51,7 +51,7 @@ void MLX90640::start() {
 
     MLX90640_SetDeviceMode(MLX_I2C_ADDR, 0);
     MLX90640_SetSubPageRepeat(MLX_I2C_ADDR, 0);
-    MLX90640_SetRefreshRate(MLX_I2C_ADDR, 0b010);
+    MLX90640_SetRefreshRate(MLX_I2C_ADDR, 0b100); //8Hz
     MLX90640_SetChessMode(MLX_I2C_ADDR);
     //MLX90640_SetSubPage(MLX_I2C_ADDR, 0);
     std::cout << "Configured...\n";

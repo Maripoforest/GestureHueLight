@@ -8,6 +8,8 @@
 #include <QBoxLayout>
 #include <qwt/qwt_plot.h>
 #include <qwt/qwt_thermo.h>
+
+#include "hue.h"
  
 class MyWidget : public QWidget
 {
@@ -38,7 +40,7 @@ private:
     int colorR = 0;
     int colorG = 0;
     int colorB = 0;
-    
+    bool light_stat = false;
     void reset();
 
 public slots:

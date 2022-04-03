@@ -7,6 +7,7 @@
 #include <thread>
 #include "mlx90640_driver.h"
 #include "mywidget.h"
+#include "hue.h"
 
 #include <QtGui>
 #include <QApplication>

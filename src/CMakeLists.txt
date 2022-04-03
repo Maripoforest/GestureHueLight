@@ -19,16 +19,19 @@ set(CMAKE_AUTOUIC ON)
 find_package(Qt5 COMPONENTS Widgets Gui REQUIRED)
 
 add_executable(Hue 
-		hue/hue.cpp 
+		main_hue.cpp
 		hue/newuser.cpp 
 		hue/fileop.cpp)
-target_link_libraries(Hue PRIVATE cpr)	
+target_link_libraries(Hue cpr)	
 
 add_executable(event
 		event.cpp
 		mywidget.cpp 
+		hue/hue.cpp
+		hue/newuser.cpp
+		hue/fileop.cpp
 		mlx90640/mlx90640_driver.cpp) 
-
+target_link_libraries(event cpr)
 target_link_libraries(event Qt5::Widgets)
 target_link_libraries(event Qt5::Gui)
 target_link_libraries(event qwt-qt5)
