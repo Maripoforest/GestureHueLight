@@ -25,9 +25,22 @@ add_executable(Hue
 target_link_libraries(Hue PRIVATE cpr)	
 
 add_executable(event
+<<<<<<< HEAD
 		mlx90640/event.cpp
 		mywidget.cpp 
 		mlx90640/mlx90640_driver.cpp) 
+=======
+		mywidget.cpp 
+<<<<<<< HEAD
+		${MYMLXLIB}/mlx90640_driver.cpp
+		event.cpp) 
+
+
+target_link_libraries(Hue PRIVATE cpr)
+=======
+		mlx90640_driver.cpp) 
+>>>>>>> threads
+>>>>>>> main
 
 target_link_libraries(event Qt5::Widgets)
 target_link_libraries(event Qt5::Gui)
