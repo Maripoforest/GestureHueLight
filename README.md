@@ -80,13 +80,6 @@ After set IP and username, adjust the brightness like this:
 mkdir build && cd build
 cmake ..
 make
-```
-To use console output if you don't have Qt installed:
-```
-sudo ./sensor
-```
-To use Qt Output:
-```
 sudo ./event
 ```
 ![](LeftHand_OpenPalm.jpg)
