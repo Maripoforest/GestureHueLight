@@ -30,9 +30,9 @@ add_executable(Hue
 #		ansiprint.cpp) 
 
 add_executable(event
-		event.cpp
 		mywidget.cpp 
-		${MYMLXLIB}/mlx90640_driver.cpp) 
+		${MYMLXLIB}/mlx90640_driver.cpp
+		event.cpp) 
 
 
 target_link_libraries(Hue PRIVATE cpr)
