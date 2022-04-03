@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project(Hue)
 
 # include_directories(../lib/mlx90640-library/headers)
+include_directories(./mlx90640)
 include_directories(./hue)
 include_directories(.)
 
@@ -24,9 +25,9 @@ add_executable(Hue
 target_link_libraries(Hue PRIVATE cpr)	
 
 add_executable(event
-		event.cpp
-		mywidget.cpp 
-		mlx90640_driver.cpp) 
+		mlx90640/event.cpp
+		mlx90640/mywidget.cpp 
+		mlx90640/mlx90640_driver.cpp) 
 
 target_link_libraries(event Qt5::Widgets)
 target_link_libraries(event Qt5::Gui)
