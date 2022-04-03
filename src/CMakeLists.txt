@@ -25,7 +25,7 @@ add_executable(Hue
 target_link_libraries(Hue PRIVATE cpr)	
 
 add_executable(event
-		event.cpp
+		mlx90640/event.cpp
 		mywidget.cpp 
 		mlx90640/mlx90640_driver.cpp) 
 
