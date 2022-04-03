@@ -16,48 +16,32 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt5 COMPONENTS Widgets Gui REQUIRED)
 
-
 add_executable(Hue 
 		main.cpp 
 		newuser.cpp 
 		fileop.cpp)
-	
+target_link_libraries(Hue PRIVATE cpr)	
+
 #add_executable(sensor
 #		main2.cpp 
 #		${MYMLXLIB}/MLX90640_API.cpp 
 #		${MYMLXLIB}/MLX90640_I2C_Driver.cpp
 #		mywidget.cpp
 #		ansiprint.cpp) 
+#target_link_libraries(sensor event Qt5::Widgets)
+#target_link_libraries(sensor event Qt5::Gui)
+#target_link_libraries(sensor event qwt-qt5)
 
 add_executable(event
 		event.cpp
 		mywidget.cpp 
 		${MYMLXLIB}/mlx90640_driver.cpp) 
 
-
-target_link_libraries(Hue PRIVATE cpr)
-
 target_link_libraries(event Qt5::Widgets)
 target_link_libraries(event Qt5::Gui)
 target_link_libraries(event qwt-qt5)
 
-#target_link_libraries(sensor event Qt5::Widgets)
-#target_link_libraries(sensor event Qt5::Gui)
-#target_link_libraries(sensor event qwt-qt5)
+
 # install(TARGETS sensor)
-
-
-# this project has dependencies on cpr and curl libs.
-# if you have make installed cpr locally, use the following instead of fetch content.
-
-# local use
-# link_libraries(/usr/local/lib/libcpr.so)
-# include_directories(/usr/local/include)
-
-# fetch remotely
-# include(FetchContent)
-# FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git
-#                        GIT_TAG beb9e98806bb84bcc130a2cebfbcbbc6ce62b335) #1.7.2
-# FetchContent_MakeAvailable(cpr)
 
 
