@@ -32,7 +32,3 @@ add_executable(event
 target_link_libraries(event Qt5::Widgets)
 target_link_libraries(event Qt5::Gui)
 target_link_libraries(event qwt-qt5)
-
-
-
-
