@@ -82,8 +82,6 @@ cmake ..
 make
 sudo ./event
 ```
-![](LeftHand_OpenPalm.jpg)
-
 
 ## References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
