@@ -9,3 +9,4 @@
 [submodule "lib/mlx90640-library"]
 	path = lib/mlx90640-library
 	url = https://github.com/Maripoforest/mlx90640-library.git
+	branch = master
