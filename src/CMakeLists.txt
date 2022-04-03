@@ -27,6 +27,7 @@ target_link_libraries(Hue cpr)
 add_executable(event
 		event.cpp
 		mywidget.cpp 
+<<<<<<< HEAD
 		hue/hue.cpp
 		hue/newuser.cpp
 		hue/fileop.cpp
@@ -35,3 +36,10 @@ target_link_libraries(event cpr)
 target_link_libraries(event Qt5::Widgets)
 target_link_libraries(event Qt5::Gui)
 target_link_libraries(event qwt-qt5)
+=======
+		mlx90640/mlx90640_driver.cpp) 
+
+target_link_libraries(event Qt5::Widgets)
+target_link_libraries(event Qt5::Gui)
+target_link_libraries(event qwt-qt5)
+>>>>>>> fa638c98b33dc495cb81c296f8cee11d0a5c1077
