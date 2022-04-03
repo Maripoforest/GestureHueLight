@@ -9,24 +9,27 @@
 #include <qwt/qwt_plot_curve.h>
 #include <cmath>
 
-extern bool read_data;
-
 MyWidget::MyWidget () {
 
         button = new QPushButton("Reset");
-        button->move(450,470);
+        button->move(650,400);
         button->setParent(this);
         button->resize(60, 20);
         connect(button, &QPushButton::clicked, this, &MyWidget::reset);
        
-        startTimer(this->intervalTime);
-        resize(750, 750);
+        // startTimer(this->intervalTime);
+        resize(720, 470);
 
 	thermo = new QwtThermo;
-	thermo->move(680,100);
+	thermo->move(650,20);
 	thermo->setParent(this);
-	thermo->setFillBrush( QBrush(Qt::red) );
-	thermo->setScale(40,300);
+	thermo->setFillBrush( QBrush(Qt::blue) );
+	thermo->setScale(0,40);
+	thermo->setScaleMaxMajor(30);
+        thermo->setAlarmEnabled(true);
+        thermo->setAlarmBrush(Qt::red);
+        thermo->setAlarmLevel(30);
+
 	thermo->show();
 }
 
@@ -34,11 +37,11 @@ void MyWidget::paintEvent(QPaintEvent *event){
         QPainter painter(this);
                 for(int i = 0;i<32;i++) {
                         for(int j = 0;j<24;j++) {
-                                Pixel = pixel[i][j] / 38 * 255;
-                                Pixel = (Pixel > 255) ? 255 : Pixel;
-                                Pixel = (Pixel < 0) ? 0 : Pixel;
+                                Pixel = pixel[i][j] / 40 * 255;
+                                Pixel = (Pixel >= 255) ? 254 : Pixel;
+                                Pixel = (Pixel <= 0) ? 1 : Pixel;
 	                        // cout << "Pixel = " << Pixel << endl;
-                                if(Pixel>=0 && Pixel <= 63) {
+                                if(Pixel>=0 && Pixel <= 64) {
 			         	colorR = 0;
 			         	colorG = 0;
 			         	temp = ((float) Pixel)/64*255;
@@ -48,7 +51,7 @@ void MyWidget::paintEvent(QPaintEvent *event){
                                      	mypen.setWidth(20);
                                      	painter.setPen(mypen);  
                                 }
-                                else if(Pixel >=64 && Pixel <= 127) {
+                                else if(Pixel >64 && Pixel <127) {
                                         colorR = 0;
                                         temp = (((float) Pixel)-64)/64*255;
                                         colorG = (int) floor(temp);  
@@ -58,8 +61,8 @@ void MyWidget::paintEvent(QPaintEvent *event){
                                         mypen.setWidth(20);
                                         painter.setPen(mypen);
                                 }      
-                                else if(Pixel >= 128 && Pixel <= 191) {
-		                 	temp = (((float) Pixel)-128)/64*255;
+                                else if(Pixel >= 127 && Pixel <= 191) {
+		                 	temp = (((float) Pixel)-127)/64*255;
 		                 	colorR = (int) floor(temp);
                                 	colorG = 255;
                                     	colorB = 0;
@@ -77,7 +80,7 @@ void MyWidget::paintEvent(QPaintEvent *event){
                                         painter.setPen(mypen);
                                 }
 			
-                        // cout<<"R:"<<colorR<<" G:"<<colorG<<" B:"<<colorB<<endl;
+                        std::cout<<"P:"<<Pixel<<"R:"<<colorR<<" G:"<<colorG<<" B:"<<colorB<<std::endl;
                         painter.drawPoint((2*i-1)*10,(2*j-1)*10);
                 }
         }
@@ -111,12 +114,21 @@ void MyWidget::timerEvent(QTimerEvent*) {
         //         }
         // }
         // thermo->setValue(pixel_max);
-        
-        if(!read_data) {
-                read_data = true;
-                //cout << read_data << endl;
-        }
+   
 	
-        this->update();
+        // this->update();
 }
 
+void MyWidget::hasValue(float* value) {
+        for (int i=0;i<32;i++) {
+                for (int j=0;j<24;j++) {
+                    pixel[i][j] = value[32 * (23-j) + i];
+                    if (pixel[i][j] > pixel_max) {
+                            pixel_max = pixel[i][j];
+                    }
+                }
+        }
+        thermo->setValue(pixel_max);
+        this->update();
+        pixel_max = 0;
+}

@@ -16,6 +16,7 @@ class MyWidget : public QWidget
 public:
     MyWidget();
     float pixel[32][24] = {0};
+    void hasValue(float* value);
  
 protected:
     void paintEvent(QPaintEvent* event);
@@ -30,8 +31,8 @@ private:
     QHBoxLayout  *hLayout;  // horizontal layout
     QwtPlot      *plot;     /* not used in this graph, comment shall we ? */
 
-    int intervalTime = 200;
-    double pixel_max =0;
+    int intervalTime = 1000;
+    double pixel_max = 0;
     float Pixel =0;  
     float temp;
     int colorR = 0;
@@ -44,4 +45,3 @@ public slots:
  
 };
 #endif
-
