@@ -7,7 +7,8 @@ Relies on curl library.
 #include "huefunc.h"
 
 void HUEMSG::curlPut(void) {
-       
+    
+	response.clear();
 	CURLcode res;
 	struct curl_slist *headers = NULL;
     headers = curl_slist_append(headers, "Content-Type: application/json");
@@ -39,6 +40,7 @@ void HUEMSG::curlPut(void) {
 
 void HUEMSG::curlPost(void) {
     
+	response.clear();
 	CURLcode res; //curl return stat
     curl = curl_easy_init();
   
@@ -75,7 +77,8 @@ void HUEMSG::curlPost(void) {
 
 
 void HUEMSG::curlGet(){
-	
+
+	response.clear();
     CURLcode res;
     curl = curl_easy_init();
 	
@@ -100,6 +103,7 @@ void HUEMSG::curlGet(){
 }
 
 std::string HUEMSG::getResponse(void) {
+	std::cout << response << std::endl;
     return response;
 }
 
