@@ -8,6 +8,7 @@
 #include <qwt/qwt_plot.h>
 #include <qwt/qwt_plot_curve.h>
 #include <cmath>
+#include "hue.h"
 
 MyWidget::MyWidget () {
 
@@ -80,7 +81,7 @@ void MyWidget::paintEvent(QPaintEvent *event){
                                         painter.setPen(mypen);
                                 }
 			
-                        std::cout<<"P:"<<Pixel<<"R:"<<colorR<<" G:"<<colorG<<" B:"<<colorB<<std::endl;
+                        // std::cout<<"P:"<<Pixel<<"R:"<<colorR<<" G:"<<colorG<<" B:"<<colorB<<std::endl;
                         painter.drawPoint((2*i-1)*10,(2*j-1)*10);
                 }
         }
@@ -120,15 +121,35 @@ void MyWidget::timerEvent(QTimerEvent*) {
 }
 
 void MyWidget::hasValue(float* value) {
+        int c = 0;
+        
         for (int i=0;i<32;i++) {
                 for (int j=0;j<24;j++) {
                     pixel[i][j] = value[32 * (23-j) + i];
                     if (pixel[i][j] > pixel_max) {
                             pixel_max = pixel[i][j];
                     }
+                    if (pixel[i][j] > 30.0 && c <= 21) {
+                            c++;
+                    }
+                    if (pixel[i][j] > 30.0 && !light_stat) {
+                        char cmd1[2][8]={{"null"},{"50"}};
+                        hue(2, cmd1);
+                        light_stat = true;
+                    }
                 }
         }
-        thermo->setValue(pixel_max);
+        // if (c>=20 && !light_stat) {
+        //         char cmd1[2][8]={{"null"},{"50"}};
+        //         hue(2, cmd1);
+        //         light_stat = true;
+        // }
+        if(c<20 && light_stat) {
+                char cmd2[2][8]={{"null"},{"0"}};
+                hue(2, cmd2);
+                light_stat = false;
+        }
         this->update();
+        thermo->setValue(pixel_max);
         pixel_max = 0;
 }

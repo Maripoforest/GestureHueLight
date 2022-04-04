@@ -1,6 +1,7 @@
 /**
+ * Authored by Maripoforest(Xiangmin Xu)
  * @copyright (C) 2017 Melexis N.V.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +52,7 @@ void MLX90640::start() {
 
     MLX90640_SetDeviceMode(MLX_I2C_ADDR, 0);
     MLX90640_SetSubPageRepeat(MLX_I2C_ADDR, 0);
-    MLX90640_SetRefreshRate(MLX_I2C_ADDR, 0b010);
+    MLX90640_SetRefreshRate(MLX_I2C_ADDR, 0b100); //8Hz
     MLX90640_SetChessMode(MLX_I2C_ADDR);
     //MLX90640_SetSubPage(MLX_I2C_ADDR, 0);
     std::cout << "Configured...\n";

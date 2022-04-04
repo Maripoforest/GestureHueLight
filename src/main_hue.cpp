@@ -12,28 +12,12 @@ Relies on cURL lib.
 #include <fstream>
 #include "fileop.h"
 #include "newuser.h"
-#include "hue.h"
 #include "huefunc.h"
 
-//brightness should be 0-255, integer
-int get_brightness(std::string str) {
+int get_brightness(std::string str);
 
-	int judge = -1;
-	try {
-		judge = std::stoi(str);
-		if (judge < 0 || judge > 255) {
-			judge = -1;
-			throw (judge);
-		}
-	}catch(...) {
-		std::cerr << "No valid brightness input, please input integer between 0-255.\n";
-		return -1;
-	}
-	return judge;
-}
+int main(int argc, char** argv) {
 
-int hue(int argc, char argv[][8]) {
-	
 	HUEMSG hm;
     std::string filename("../log.txt");
     std::vector<std::string> lines;
@@ -142,14 +126,14 @@ int hue(int argc, char argv[][8]) {
 	}
 
     if (judge == 0){
-		hm.setMessage("{\"on\": false}");
+		hm.setMessage("0");
 		hm.setURL(api);
 		hm.curlPut();
+
 		if(hm.getResponse() != "") {
 			std::cout << "Lights off" << std::endl;
 		}
 		else {std::cerr << "No response from bridge!" << std::endl;}
-		
 	}
 
 	else if (judge > 0) {
@@ -162,5 +146,22 @@ int hue(int argc, char argv[][8]) {
 		}
 		else {std::cerr << "No response from bridge!" << std::endl;}
 	}
-    return EXIT_SUCCESS;
+    return 0;
+}
+
+//brightness should be 0-255, integer
+int get_brightness(std::string str) {
+
+	int judge = -1;
+	try {
+		judge = std::stoi(str);
+		if (judge < 0 || judge > 255) {
+			judge = -1;
+			throw (judge);
+		}
+	}catch(...) {
+		std::cerr << "No valid brightness input, please input integer between 0-255.\n";
+		return -1;
+	}
+	return judge;
 }

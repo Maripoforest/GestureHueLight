@@ -1,6 +1,7 @@
 /**
+ * Authored by Maripoforest(Xiangmin Xu)
  * @copyright (C) 2017 Melexis N.V.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -110,7 +111,7 @@ private:
     //
     int state;
     float eTa;
-    float emissivity = 0.9;
+    float emissivity = 0.8;
     uint16_t frame[834];
     static float image[768];
     static uint16_t data[768*sizeof(float)];

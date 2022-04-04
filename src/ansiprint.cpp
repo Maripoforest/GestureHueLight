@@ -1,3 +1,8 @@
+/*
+Arthor: Xiangmin XU (Maripoforest)
+MLX90640 Console print
+*/
+
 #include <iostream>
 #include <stdio.h>
 #include <cstdint>
