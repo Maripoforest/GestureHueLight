@@ -19,12 +19,13 @@ The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX906
 ```
 git clone --recursive https://github.com/Maripoforest/Smart-Light-Bulb-Control-with-Gesture.git
 ```
-This project has dependencies on [cURL](https://github.com/curl/curl.git) and [cpr](https://github.com/curl/curl.git) , the cpr submodule in lib will configure both for you.
+This project has dependencies on [cURL](https://github.com/curl/curl.git).
 
 
-2. To build cpr, we need the OPENSSL developer kit:
+2. To build cURL, we need the OPENSSL developer kit and curl lib:
 ```
 sudo apt-get install libssl-dev
+sudo apt install curl
 ```
 
 3. To use the I2C bus, make sure the linux I2C dev library is installed:
@@ -94,16 +95,12 @@ sudo ./event
 
 Command line tool and library for transferring data with URLs. (since 1998)
 
-
-> [The cpr GitHub Page](https://github.com/libcpr/cpr)
-
-cpr for C++ Requests, it is a simple wrapper around libcurl inspired by the excellent Python Requests project.
-
-
 ## Update
 Feb.8.2022, added a python demo for wireless light bulb control. -Xiangmin XU (Removed by Xiangmin XU on Feb 25th)
 
 Feb.25.2022, added a C++ demo for wireless light bulb control, this demo relies on lib [cURL](https://github.com/curl/curl.git) and lib [cpr](https://github.com/curl/curl.git) which simplifies the cURL lib. -Xiangmin XU
+
+Apr.04.2022, cpr removed. Now only has dependencies on cURL.
 
 
 
