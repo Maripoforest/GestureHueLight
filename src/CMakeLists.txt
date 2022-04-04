@@ -1,4 +1,4 @@
-# Arthor: Xiangmin XU (Maripoforest)
+# Arthor: Xiangmin XU (Maripoforest) Haiyang You
 # CMake file for the project
 
 cmake_minimum_required(VERSION 3.16)
