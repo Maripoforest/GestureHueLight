@@ -1,3 +1,8 @@
+/*
+Arthor: Xiangmin XU (Maripoforest)
+MLX90640 Console print
+*/
+
 #ifndef ANSIPRINT_H
 #define ANSIPRINT_H
 

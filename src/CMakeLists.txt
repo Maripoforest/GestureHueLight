@@ -1,11 +1,9 @@
+# Arthor: Xiangmin XU (Maripoforest)
+# CMake file for the project
+
 cmake_minimum_required(VERSION 3.16)
 
 project(Hue)
-
-# include_directories(../lib/mlx90640-library/headers)
-include_directories(./mlx90640)
-include_directories(./hue)
-include_directories(.)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/..)
 set(MYMLXLIB ../lib/mlx90640-library/functions)
@@ -15,31 +13,35 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
+set(CURL_LIBRARY "-lcurl")
+
+find_package(CURL REQUIRED)
 
 find_package(Qt5 COMPONENTS Widgets Gui REQUIRED)
+
+include_directories(${CURL_INCLUDE_DIR})
+# include_directories(../lib/mlx90640-library/headers)
+include_directories(./mlx90640)
+include_directories(./hue)
+include_directories(.)
 
 add_executable(Hue 
 		main_hue.cpp
 		hue/newuser.cpp 
-		hue/fileop.cpp)
-target_link_libraries(Hue cpr)	
+		hue/fileop.cpp
+		hue/huefunc.cpp)
+target_link_libraries(Hue ${CURL_LIBRARIES})
 
 add_executable(event
-		event.cpp
-		mywidget.cpp 
-<<<<<<< HEAD
 		hue/hue.cpp
 		hue/newuser.cpp
 		hue/fileop.cpp
-		mlx90640/mlx90640_driver.cpp) 
-target_link_libraries(event cpr)
-target_link_libraries(event Qt5::Widgets)
-target_link_libraries(event Qt5::Gui)
-target_link_libraries(event qwt-qt5)
-=======
+		hue/huefunc.cpp
+		event.cpp
+		mywidget.cpp 
 		mlx90640/mlx90640_driver.cpp) 
 
+target_link_libraries(event ${CURL_LIBRARIES})
 target_link_libraries(event Qt5::Widgets)
 target_link_libraries(event Qt5::Gui)
 target_link_libraries(event qwt-qt5)
->>>>>>> fa638c98b33dc495cb81c296f8cee11d0a5c1077

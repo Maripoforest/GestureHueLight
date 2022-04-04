@@ -7,7 +7,8 @@ Relies on curl library.
 #include "huefunc.h"
 
 void HUEMSG::curlPut(void) {
-       
+
+    response.clear(); 
 	CURLcode res;
 	struct curl_slist *headers = NULL;
     headers = curl_slist_append(headers, "Content-Type: application/json");
@@ -16,22 +17,24 @@ void HUEMSG::curlPut(void) {
 
 	if (curl) {
 		
-        std::string jsoncmd = "{\"on\": true, \"bri\":" + MSG + "}"; //brightness 
+        std::string jsoncmd = "{\"on\": true, \"bri\":" + MSG + "}"; //brightness ;
         
         if(MSG == "0") {
             jsoncmd = "{\"on\": false}"; //turns off
         }
+       
 		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
 		curl_easy_setopt(curl, CURLOPT_URL, URL.c_str());
 		curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "PUT"); /* !!! */
 		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsoncmd.c_str());
 
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callBack);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&response);
 
 		res = curl_easy_perform(curl);
         if(res != CURLE_OK) {
             std::cout << res << std::endl;
         }
-		std::cout << std::endl;
 		curl_slist_free_all(headers);
 	}
 	curl_easy_cleanup(curl);
@@ -39,6 +42,7 @@ void HUEMSG::curlPut(void) {
 
 void HUEMSG::curlPost(void) {
     
+	response.clear(); 
 	CURLcode res; //curl return stat
     curl = curl_easy_init();
   
@@ -76,6 +80,7 @@ void HUEMSG::curlPost(void) {
 
 void HUEMSG::curlGet(){
 	
+	response.clear();  
     CURLcode res;
     curl = curl_easy_init();
 	
@@ -100,6 +105,7 @@ void HUEMSG::curlGet(){
 }
 
 std::string HUEMSG::getResponse(void) {
+	std::cout << response << std::endl;
     return response;
 }
 

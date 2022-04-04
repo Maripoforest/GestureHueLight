@@ -1,7 +1,3 @@
-[submodule "lib/cpr"]
-	path = lib/cpr
-	url = https://github.com/libcpr/cpr.git
-	
 [submodule "lib/cppThread"]
 	path = lib/cppThread
 	url = https://github.com/berndporr/cppThread.git

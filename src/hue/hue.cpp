@@ -1,12 +1,11 @@
 /*
-Arthor: Xiangmin XU (Maripoforest) Haiyang You (rhythm232)12.3.2022
+Arthor: Xiangmin XU (Maripoforest) Haiyang You (rhythm232)
 A Hue static IP and static user on/off brightness control method.
-Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS method that can be used to send message to the Hue light bulb api.
+Relies on cURL lib.
 */
 
 
 #include <limits>
-#include <cpr/cpr.h>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -14,6 +13,7 @@ Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS 
 #include "fileop.h"
 #include "newuser.h"
 #include "hue.h"
+#include "huefunc.h"
 
 //brightness should be 0-255, integer
 int get_brightness(std::string str) {
@@ -33,7 +33,8 @@ int get_brightness(std::string str) {
 }
 
 int hue(int argc, char argv[][8]) {
-
+	
+	HUEMSG hm;
     std::string filename("../log.txt");
     std::vector<std::string> lines;
     newuser user;
@@ -140,26 +141,24 @@ int hue(int argc, char argv[][8]) {
 		output_file.close();
 	}
 
-    //using cpr to send json message to hue
-    cpr::Url url{api};
-
     if (judge == 0){
-		cpr::Body body1{"{\"on\": false}"};  		// JSON text string
-		cpr::Response r1 = cpr::Put(url, body1);                  
-		std::cout << r1.text<< std::endl;
-		if (r1.text != "") {
+		hm.setMessage("{\"on\": false}");
+		hm.setURL(api);
+		hm.curlPut();
+		if(hm.getResponse() != "") {
 			std::cout << "Lights off" << std::endl;
 		}
 		else {std::cerr << "No response from bridge!" << std::endl;}
+		
 	}
 
 	else if (judge > 0) {
-		std::string msg = "{\"on\": true, \"bri\":"+ std::to_string(judge) +"}";
-		cpr::Body body2{msg};
-		cpr::Response r2 = cpr::Put(url, body2);              
-		std::cout << r2.text << std::endl;
-		if (r2.text != "") {
-			std::cout << "Brightness Changed" << std::endl;
+		hm.setMessage(std::to_string(judge));
+		hm.setURL(api);
+		hm.curlPut();
+
+		if(hm.getResponse() != "") {
+			std::cout << "Brightness set to " << judge << std::endl;
 		}
 		else {std::cerr << "No response from bridge!" << std::endl;}
 	}

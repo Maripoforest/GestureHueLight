@@ -1,3 +1,8 @@
+/*
+Arthor: Xiangmin XU (Maripoforest)
+logfile operation for Hue
+*/
+
 #ifndef FILEOP_H
 #define FILEOP_H
 

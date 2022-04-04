@@ -1,15 +1,13 @@
 /*
 Arthor: Xiangmin XU (Maripoforest) Haiyang You (rhythm232)
 A Hue static IP and static user on/off brightness control method.
-Relies on library cpr https://github.com/libcpr/cpr.git, cpr has some C++ HTTPS method that can be used to send message to the Hue light bulb api.
+Relies on cURL lib.
 */
 
-#include "newuser.h"
-#include "fileop.h"
-#include <cpr/cpr.h>
 #include <iostream>
 #include <string>
 #include <limits>
+#include "newuser.h"
 
 newuser::newuser() {
     std::vector<std::string> lines;
@@ -26,29 +24,30 @@ newuser::newuser() {
 }
 
 std::string newuser::get_ip(bool& changed) {
-    std::string ip_at = "https://discovery.meethue.com";
-    cpr::Url getip{ip_at};
-    cpr::Response userIP = cpr::Get(getip);
-    if (userIP.text == "") {
+    hm.setURL("https://discovery.meethue.com");
+    hm.curlGet();
+    std::cout << "Your Hue is at:" << std::endl;
+    std::string text = hm.getResponse();
+    if (text == "") {
         std::cerr << "No Bridge Found.\n" << std::endl;
         return "NOBRIDGE";
     }
-    std::string info = userIP.text.substr(3, 2);
+    std::string info = text.substr(3, 2);
     if (info != "id") {
         std::cerr << "User request failure.\n" << std::endl;
         return "NOBRIDGE";
     }
     else if (info == "id") {
         int qcount = 0;
-        for (size_t i = 47; i < userIP.text.length(); i++) {
-            if (userIP.text[i] == '\"') {
+        for (size_t i = 47; i < text.length(); i++) {
+            if (text[i] == '\"') {
                 qcount = i - 47;
                 break;
             }
         }
-        if(this->userip != userIP.text.substr(47, qcount)) {
+        if(this->userip != text.substr(47, qcount)) {
             changed = true;
-            this->userip = userIP.text.substr(47, qcount);
+            this->userip = text.substr(47, qcount);
         }
         
     }   
@@ -57,25 +56,24 @@ std::string newuser::get_ip(bool& changed) {
 }
 
 std::string newuser::get_user(std::string ip, bool& changed) {
-
+    
     std::cout << "Please press the physical hue button,\npress Enter to continue." << std::endl;
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 
 	std::string yourapi = "http://" + ip + "/api";
+    hm.setURL(yourapi);
+    hm.setMessage("{\"devicetype\":\"Raspberrypi\"}");
+    hm.curlPost();
+    std::cout << "Requesting user at following IP:" << std::endl;
+    std::string text = hm.getResponse();
 
-	cpr::Url user{yourapi};
-	cpr::Body user_request{"{\"devicetype\":\"Raspberrypi\"}"};
-
-	cpr::Response userid = cpr::Post(user, user_request);
-	std::cout << userid.text << std::endl;
-
-    std::string info = userid.text.substr(3, 7);
+    std::string info = text.substr(3, 7);
     if (info != "success") {
         std::cerr << "User request failure, using default username.\n" << std::endl;
     }
     else if (info == "success") {
-        if (this->username != userid.text.substr(25, 40)) {
-            this->username = userid.text.substr(25, 40);
+        if (this->username != text.substr(25, 40)) {
+            this->username = text.substr(25, 40);
             changed = true;
         }
         
