@@ -83,7 +83,8 @@ cmake ..
 make
 sudo ./event
 ```
-
+##Diagram
+sequence diagram for data transfer
 ## References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
 
