@@ -33,6 +33,12 @@ MyWidget::MyWidget () {
         thermo->setAlarmLevel(30);
 
 	thermo->show();
+
+	label = new QLabel(this);
+        label->setText("max");
+        label->setStyleSheet("colore:black");
+        label->setGeometry(670,10,50,15);
+
 }
 
 void MyWidget::paintEvent(QPaintEvent *event){
