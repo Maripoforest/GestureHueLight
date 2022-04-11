@@ -84,7 +84,7 @@ sudo ./event
 ```
 
 ## Diagram
-sequence diagram for data transfer
+sequence diagram for data transfer(![Uploading sequence diagram for data transfer.png…]
 
 ## References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
