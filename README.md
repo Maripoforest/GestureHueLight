@@ -110,5 +110,5 @@ Feb.25.2022, added a C++ demo for wireless light bulb control, this demo relies 
 
 
 ## Logo
-<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/logo.png" width="200px">
+<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/logo.png" width="200px"  div al ign=center>
 
