@@ -89,3 +89,25 @@ cmake ..
 make
 sudo ./event
 ```
+### Authors
+ <a href="https://github.com/Maripoforest">Xiangmin Xu</a> <br/>
+ <a href="https://github.com/rhythm232">Haiyang You</a> <br/>
+ <a href="https://github.com/hjyyjh">Heji yuan</a> <br/>
+
+
+### References
+> [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
+
+> [Sensor Datasheet](MLX90640-Datasheet-Melexis.pdf).
+
+> [The Hue developer page](https://developers.meethue.com/).
+
+> [The cURL Offical Page](https://https://curl.se/)
+
+Command line tool and library for transferring data with URLs. (since 1998)
+
+
+> [The cpr GitHub Page](https://github.com/libcpr/cpr)
+
+cpr for C++ Requests, it is a simple wrapper around libcurl inspired by the excellent Python Requests project.
+
