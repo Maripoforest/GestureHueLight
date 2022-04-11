@@ -2,7 +2,7 @@
 # GestureHueLight
 <br/>
 <p align="center">
-<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/logo.png" width="400" height="350">
+<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/logo.png" width="400" height="400">
   </p>
 <br/>
 
