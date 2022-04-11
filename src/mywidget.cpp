@@ -8,6 +8,7 @@
 #include <qwt/qwt_plot.h>
 #include <qwt/qwt_plot_curve.h>
 #include <cmath>
+#include <QLabel>
 #include "hue.h"
 
 MyWidget::MyWidget () {

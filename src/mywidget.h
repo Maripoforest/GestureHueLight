@@ -8,7 +8,7 @@
 #include <QBoxLayout>
 #include <qwt/qwt_plot.h>
 #include <qwt/qwt_thermo.h>
-
+#include <QLabel>
 #include "hue.h"
  
 class MyWidget : public QWidget
