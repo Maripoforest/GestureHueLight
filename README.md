@@ -109,4 +109,6 @@ Feb.8.2022, added a python demo for wireless light bulb control. -Xiangmin XU (R
 Feb.25.2022, added a C++ demo for wireless light bulb control, this demo relies on lib [cURL](https://github.com/curl/curl.git) and lib [cpr](https://github.com/curl/curl.git) which simplifies the cURL lib. -Xiangmin XU
 
 
+## Logo
+![logo](https://github.com/Maripoforest/GestureHueLight/blob/main/logo.png)
 
