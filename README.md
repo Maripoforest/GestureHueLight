@@ -109,5 +109,5 @@ Command line tool and library for transferring data with URLs. (since 1998)
 
 > [The cpr GitHub Page](https://github.com/libcpr/cpr)
 
-cpr for C++ Requests, it is a simple wrapper around libcurl inspired by the excellent Python Requests project.
+
 
