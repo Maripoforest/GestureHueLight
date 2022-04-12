@@ -92,7 +92,7 @@ sudo ./event
 ### Authors
  <a href="https://github.com/Maripoforest">Xiangmin Xu</a> <br/>
  <a href="https://github.com/rhythm232">Haiyang You</a> <br/>
- <a href="https://github.com/hjyyjh">Heji yuan</a> <br/>
+ <a href="https://github.com/hjyyjh">Jiyuan He</a> <br/>
 
 
 ### References
@@ -107,7 +107,6 @@ sudo ./event
 Command line tool and library for transferring data with URLs. (since 1998)
 
 
-> [The cpr GitHub Page](https://github.com/libcpr/cpr)
 
 
 
