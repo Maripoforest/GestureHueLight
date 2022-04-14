@@ -14,6 +14,11 @@ logfile::logfile(std::string _filename) {
     this->filename = _filename;
 }
 
+
+logfile::logfile(void) {
+    this->filename = "../log.txt";
+}
+
 bool logfile::readfile(std::vector<std::string>& lines) {
     std::ifstream input_file(this->filename);
     std::string line;

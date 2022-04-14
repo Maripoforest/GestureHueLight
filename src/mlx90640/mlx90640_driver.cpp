@@ -52,7 +52,7 @@ void MLX90640::start() {
 
     MLX90640_SetDeviceMode(MLX_I2C_ADDR, 0);
     MLX90640_SetSubPageRepeat(MLX_I2C_ADDR, 0);
-    MLX90640_SetRefreshRate(MLX_I2C_ADDR, 0b100); //8Hz
+    MLX90640_SetRefreshRate(MLX_I2C_ADDR, 0b001); //8Hz
     MLX90640_SetChessMode(MLX_I2C_ADDR);
     //MLX90640_SetSubPage(MLX_I2C_ADDR, 0);
     std::cout << "Configured...\n";
@@ -92,7 +92,9 @@ void MLX90640::run(){
         // MLX90640_SetSubPage(MLX_I2C_ADDR,!subpage);
         
         if (nullptr != mlx90640_callback) {
-            mlx90640_callback->hasValue(mlx90640To);
+            bool ff = mlx90640_callback->hasValue(mlx90640To);
+            if (!ff) {MLX90640_SetRefreshRate(MLX_I2C_ADDR, 0b100);}
+            else if(ff) {MLX90640_SetRefreshRate(MLX_I2C_ADDR, 0b010);}
         }   
     }
 }

@@ -1,4 +1,4 @@
-# Arthor: Xiangmin XU (Maripoforest)
+# Arthor: Xiangmin XU (Maripoforest) Haiyang You
 # CMake file for the project
 
 cmake_minimum_required(VERSION 3.16)
@@ -33,11 +33,10 @@ add_executable(Hue
 target_link_libraries(Hue ${CURL_LIBRARIES})
 
 add_executable(event
-		hue/hue.cpp
 		hue/newuser.cpp
 		hue/fileop.cpp
 		hue/huefunc.cpp
-		event.cpp
+		mlx90640/event.cpp
 		mywidget.cpp 
 		mlx90640/mlx90640_driver.cpp) 
 

@@ -1,35 +1,46 @@
-# Smart Light Bulb Control via WiFi with Gesture <br />(Using Thermo Camera)
-Use hand gesture to control the on/off of HUE light bulbs and adjust brightness.
+<!-- PROJECT LOGO -->
+<h1 align="center">GestureHueLight</h1>
+<p align="center">
+<br/>
+<p align="center">
+<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/logo2.png" width="400" height="400">
+  </p>
+<br/>
 
+<p align="center">
+    <a href="https://github.com/Maripoforest/GestureHueLight/graphs/contributors" alt="Contributors">
+        <img src="https://img.shields.io/github/contributors/Maripoforest/GestureHueLight.svg" /></a>
+    <a href="https://github.com/Maripoforest/GestureHueLight/issues" alt="Issues">
+        <img src="https://img.shields.io/github/issues/Maripoforest/GestureHueLight.svg" /></a>
+</p>
 
 ## Introduction
-Internet of things has been a major part in future homes. People like to control their house facilities without finding physical controllers or press buttons on the walls. Smarter remote control should be what we pursuit. 
-
-In this project, we use thermo camera to identify human hands, according to different gestures we detect, LED statuses are changing between open/close/low brightness/high brightness. The whole process is real time, as the camera keeps on scanning and recognizing gestures.
-
-The application is on Raspberry Pi **4b**, the sensor we use is Melexis **MLX90640** IR Array, the sensor communicates in **I2C** bus, the light bulb we use is **Philips Hue White Filament Regular A60 LED**.
-
+During the COVID crisis, people find it more important than ever to control their office facilities without physical touch. 
+The touchless control should be what we pursue in the future. 
+Although we already have sound-controlled or simple IR-controlled light switches, it is not likely to change the brightness of the object light bulb with them. 
+In this case, a camera based gesture control switch came up in our mind. 
+It has to be simple to use, flexible enough to change the room brightness, and most important, touchless.
 
 ## Project Flowchart
+
 ![](flowchart2.png)
 
 ## Prerequistes
 **IMPORTANT** 
-1. To clone the lib, don't forget the **--recursive** command to also clone the submodules.
-```
-git clone --recursive https://github.com/Maripoforest/Smart-Light-Bulb-Control-with-Gesture.git
-```
-This project has dependencies on [cURL](https://github.com/curl/curl.git) and [cpr](https://github.com/curl/curl.git) , the cpr submodule in lib will configure both for you.
-
-
-2. To build cpr, we need the OPENSSL developer kit:
+1. This project has dependencies on [cURL](https://github.com/curl/curl.git). To build cURL, we need the OPENSSL developer kit and curl lib:
 ```
 sudo apt-get install libssl-dev
+sudo apt install curl
 ```
 
-3. To use the I2C bus, make sure the linux I2C dev library is installed:
+2. To use the I2C bus, make sure the linux I2C dev library is installed:
 ```
 sudo apt-get install libi2c-dev
+```
+
+3. To use the Qt lib, make sure **ALL** Qt dependencies have been installed:
+```
+sudo apt-get install qtdeclarative5-dev-tools libqwt-qt5-dev qtmultimedia5-dev qtbase5-dev
 ```
 
 ##  Hue light bulb brightness control c++: How to use
@@ -82,6 +93,8 @@ cmake ..
 make
 sudo ./event
 ```
+## Sequence diagram
+<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/sequence%20diagram%20for%20data%20transfer.png" width="500px">
 
 ## Diagram
 <img src="https://github.com/Maripoforest/GestureHueLight/blob/main/sequence%20diagram%20for%20data%20transfer.png" width="500px">
@@ -97,16 +110,24 @@ sudo ./event
 
 Command line tool and library for transferring data with URLs. (since 1998)
 
+### Authors
+ <a href="https://github.com/Maripoforest">Xiangmin Xu</a> <br/>
+ <a href="https://github.com/rhythm232">Haiyang You</a> <br/>
+ <a href="https://github.com/hjyyjh">Jiyuan He</a> <br/>
+ Yilin Zhong</a> <br/>
 
-> [The cpr GitHub Page](https://github.com/libcpr/cpr)
+### References
+> [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
 
-cpr for C++ Requests, it is a simple wrapper around libcurl inspired by the excellent Python Requests project.
+> [Sensor Datasheet](MLX90640-Datasheet-Melexis.pdf).
+
+> [The Hue developer page](https://developers.meethue.com/).
+
+> [The cURL Offical Page](https://https://curl.se/)
+
+Command line tool and library for transferring data with URLs. (since 1998)
 
 
-## Update
-Feb.8.2022, added a python demo for wireless light bulb control. -Xiangmin XU (Removed by Xiangmin XU on Feb 25th)
-
-Feb.25.2022, added a C++ demo for wireless light bulb control, this demo relies on lib [cURL](https://github.com/curl/curl.git) and lib [cpr](https://github.com/curl/curl.git) which simplifies the cURL lib. -Xiangmin XU
 
 
 ## Logo
