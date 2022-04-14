@@ -1,10 +1,18 @@
 <!-- PROJECT LOGO -->
-# GestureHueLight
+<h1 align="center">GestureHueLight</h1>
+<p align="center">
 <br/>
 <p align="center">
 <img src="https://github.com/Maripoforest/GestureHueLight/blob/main/logo2.png" width="400" height="400">
   </p>
 <br/>
+
+<p align="center">
+    <a href="https://github.com/Maripoforest/GestureHueLight/graphs/contributors" alt="Contributors">
+        <img src="https://img.shields.io/github/contributors/Maripoforest/GestureHueLight.svg" /></a>
+    <a href="https://github.com/Maripoforest/GestureHueLight/issues" alt="Issues">
+        <img src="https://img.shields.io/github/issues/Maripoforest/GestureHueLight.svg" /></a>
+</p>
 
 ### Introduction
 Internet of things has been a major part in future homes. People like to control their house facilities without finding physical controllers or press buttons on the walls. Smarter remote control should be what we pursuit.
