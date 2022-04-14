@@ -96,9 +96,6 @@ sudo ./event
 ## Sequence diagram
 <img src="https://github.com/Maripoforest/GestureHueLight/blob/main/sequence%20diagram%20for%20data%20transfer.png" width="500px">
 
-## Diagram
-<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/sequence%20diagram%20for%20data%20transfer.png" width="500px">
-
 ## References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
 
@@ -115,22 +112,4 @@ Command line tool and library for transferring data with URLs. (since 1998)
  <a href="https://github.com/rhythm232">Haiyang You</a> <br/>
  <a href="https://github.com/hjyyjh">Jiyuan He</a> <br/>
  Yilin Zhong</a> <br/>
-
-### References
-> [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
-
-> [Sensor Datasheet](MLX90640-Datasheet-Melexis.pdf).
-
-> [The Hue developer page](https://developers.meethue.com/).
-
-> [The cURL Offical Page](https://https://curl.se/)
-
-Command line tool and library for transferring data with URLs. (since 1998)
-
-
-
-
-## Logo
-<div align="center">
-<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/logo2.png" width="200px"  div al ign=center>
 
