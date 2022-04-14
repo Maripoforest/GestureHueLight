@@ -38,6 +38,11 @@ sudo apt install curl
 sudo apt-get install libi2c-dev
 ```
 
+3. To use the Qt lib, make sure **ALL** Qt dependencies have been installed:
+```
+sudo apt-get install qtdeclarative5-dev-tools libqwt-qt5-dev qtmultimedia5-dev qtbase5-dev
+```
+
 ##  Hue light bulb brightness control c++: How to use
 At the very first beginning, make the executable:
 
@@ -88,6 +93,8 @@ cmake ..
 make
 sudo ./event
 ```
+## Sequence diagram
+<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/sequence%20diagram%20for%20data%20transfer.png" width="500px">
 
 ## References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
