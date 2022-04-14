@@ -14,35 +14,26 @@
         <img src="https://img.shields.io/github/issues/Maripoforest/GestureHueLight.svg" /></a>
 </p>
 
-### Introduction
-Internet of things has been a major part in future homes. People like to control their house facilities without finding physical controllers or press buttons on the walls. Smarter remote control should be what we pursuit.
+## Introduction
+During the COVID crisis, people find it more important than ever to control their office facilities without physical touch. 
+The touchless control should be what we pursue in the future. 
+Although we already have sound-controlled or simple IR-controlled light switches, it is not likely to change the brightness of the object light bulb with them. 
+In this case, a camera based gesture control switch came up in our mind. 
+It has to be simple to use, flexible enough to change the room brightness, and most important, touchless.
 
-In this project, we use thermo camera to identify human hands, according to different gestures we detect, LED statuses are changing between open/close/low brightness/high brightness. The whole process is real time, as the camera keeps on scanning and recognizing gestures.
+## Project Flowchart
 
-The application is on Raspberry Pi 4b, the sensor we use is Melexis MLX90640 IR Array, the sensor communicates in I2C bus, the light bulb we use is Philips Hue White Filament Regular A60 LED.
+![](flowchart2.png)
 
-### Project Flowchart
-<br/>
-<p align="center">
-<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/flowchart2.png" >
-  </p>
-<br/>
-
-### Prerequistes
+## Prerequistes
 **IMPORTANT** 
-1. To clone the lib, don't forget the **--recursive** command to also clone the submodules.
-```
-git clone --recursive https://github.com/Maripoforest/Smart-Light-Bulb-Control-with-Gesture.git
-```
-This project has dependencies on [cURL](https://github.com/curl/curl.git) and [cpr](https://github.com/curl/curl.git) , the cpr submodule in lib will configure both for you.
-
-
-2. To build cpr, we need the OPENSSL developer kit:
+1. This project has dependencies on [cURL](https://github.com/curl/curl.git). To build cURL, we need the OPENSSL developer kit and curl lib:
 ```
 sudo apt-get install libssl-dev
+sudo apt install curl
 ```
 
-3. To use the I2C bus, make sure the linux I2C dev library is installed:
+2. To use the I2C bus, make sure the linux I2C dev library is installed:
 ```
 sudo apt-get install libi2c-dev
 ```
@@ -97,12 +88,23 @@ cmake ..
 make
 sudo ./event
 ```
+
+## References
+> [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
+
+> [Sensor Datasheet](MLX90640-Datasheet-Melexis.pdf).
+
+> [The Hue developer page](https://developers.meethue.com/).
+
+> [The cURL Offical Page](https://https://curl.se/)
+
+Command line tool and library for transferring data with URLs. (since 1998)
+
 ### Authors
  <a href="https://github.com/Maripoforest">Xiangmin Xu</a> <br/>
  <a href="https://github.com/rhythm232">Haiyang You</a> <br/>
  <a href="https://github.com/hjyyjh">Jiyuan He</a> <br/>
  Yilin Zhong</a> <br/>
-
 
 ### References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
