@@ -43,7 +43,7 @@ sudo apt-get install libi2c-dev
 sudo apt-get install qtdeclarative5-dev-tools libqwt-qt5-dev qtmultimedia5-dev qtbase5-dev
 ```
 
-##  Hue light bulb brightness control c++: How to use
+##  Hue light bulb brightness control: How to use
 At the very first beginning, make the executable:
 
 ```
