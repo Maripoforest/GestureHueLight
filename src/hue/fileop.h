@@ -15,11 +15,12 @@ logfile operation for Hue
 class logfile
 {
 private:
-    std::string filename;
+    std::string filename = "../log.txt";
 public:
 
     //constructor, with file path
     logfile(std::string _filename);
+    logfile(void);
     
     //the bool return decides whether it succeeded reading the file
     bool readfile(std::vector<std::string>& lines);
