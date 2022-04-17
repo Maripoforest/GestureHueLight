@@ -31,10 +31,10 @@
 #include <string.h>
 #include <linux/i2c-dev.h>
 #include "mlx90640_driver.h"
-#include "mywidget.h"
+#include "../mywidget.h"
 
 #define SCALEALPHA 0.000001
-#define I2C_MSG_FMT char
+// #define I2C_MSG_FMT char
 #ifndef I2C_FUNC_I2C
 #include <linux/i2c.h>
 #define I2C_MSG_FMT __u8

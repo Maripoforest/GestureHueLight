@@ -6,7 +6,6 @@ cmake_minimum_required(VERSION 3.16)
 project(Hue)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/..)
-set(MYMLXLIB ../lib/mlx90640-library/functions)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
@@ -20,10 +19,9 @@ find_package(CURL REQUIRED)
 find_package(Qt5 COMPONENTS Widgets Gui REQUIRED)
 
 include_directories(${CURL_INCLUDE_DIR})
-# include_directories(../lib/mlx90640-library/headers)
 include_directories(./mlx90640)
 include_directories(./hue)
-include_directories(.)
+# include_directories(.)
 
 add_executable(Hue 
 		main_hue.cpp

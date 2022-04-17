@@ -24,6 +24,6 @@ MLX90640 Console print
 //#define FMT_STRING "%+06.2f "
 #define FMT_STRING "\u2588\u2588"
 
-void ansi_print(float* mlx90640To);
+int ansi_print(float* mlx90640To);
 
 #endif
