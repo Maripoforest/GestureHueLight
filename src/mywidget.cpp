@@ -8,7 +8,8 @@
 #include <qwt/qwt_thermo.h>
 #include <qwt/qwt_plot.h>
 #include <qwt/qwt_plot_curve.h>
-#include <cmath>
+#include <cmath> 
+
 
 
 MyWidget::MyWidget () {
@@ -46,7 +47,7 @@ MyWidget::MyWidget () {
 
         resize(750, 530);
         
-        startTimer(this->intervalTime);
+        // startTimer(this->intervalTime);
 	
         thermo = new QwtThermo;
 	thermo->move(650,20);
@@ -160,17 +161,20 @@ void MyWidget::ctrlonoff() {
 void MyWidget::framerate() {
         if (!fr) {
                 fr = true;
+                freq = 1;
         }
         else {
                 fr = false;
+                freq = 3;
         }
 }
 
 void MyWidget::timerEvent(QTimerEvent*) {
-        hueMsgEnd();
+        
 }
 
 bool MyWidget::hasValue(float* value) {
+        
         
         hotpixel = 0;
         lc = 0;
@@ -204,15 +208,15 @@ bool MyWidget::hasValue(float* value) {
 
         if(controlling) {
                 hueMsgEnd();
-                if(rc >= 10 && rc > lc){upper_right = true; upper_left = false;}
-                if(lc >= 10 && lc > rc){upper_left = true; upper_right = false;}     
+                if(rc >= 15 && rc - lc > 10){upper_right = true; upper_left = false;}
+                if(lc >= 15 && lc - rc > 10){upper_left = true; upper_right = false;}     
                 if(hotpixel>30 && hotpixel < 630) {
                         rep += 1;
-                        rep %= 64500;
-                        if (rep %5 == 0) {
+                        rep %= 60000;
+                        if (rep % freq == 0) {
                                 if (upper_left && light_stat && !upper_right) {
-                                        if (bri > 0) {
-                                                bri -= 50;
+                                        if (bri >= 20) {
+                                                bri -= 20;
                                         }
                                         else {bri = 0; light_stat = false;}
                                         std::cout << bri << "---------\n";
@@ -220,8 +224,8 @@ bool MyWidget::hasValue(float* value) {
                                 }
 
                                 else if (upper_right && !upper_left) {
-                                        if (bri < 250) {
-                                                bri += 50;
+                                        if (bri <= 230) {
+                                                bri += 20;
                                                 light_stat = true;
                                                 std::cout << bri << "+++++++++\n";
                                                 hueThread = new std::thread(exec, this);
@@ -245,8 +249,8 @@ bool MyWidget::hasValue(float* value) {
         this->update();
         thermo->setValue(pixel_max);
         pixel_max = 0;
-        if(fr){return true;}
-        return false;
+        
+        return fr;
 }
 
 void MyWidget::lightCmd() {
