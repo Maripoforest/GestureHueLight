@@ -6,7 +6,6 @@
 #include <chrono>
 #include <thread>
 #include "mlx90640_driver.h"
-#include "mywidget.h"
 
 #include <QtGui>
 #include <QApplication>

@@ -9,9 +9,9 @@
 #include <qwt/qwt_plot.h>
 #include <qwt/qwt_thermo.h>
 #include <qwt/qwt_text.h>
-#include "huefunc.h"
-#include "fileop.h"
-#include "newuser.h"
+#include "hue/huefunc.h"
+#include "hue/fileop.h"
+#include "hue/newuser.h"
 #include <QLabel>
  
 class MyWidget : public QWidget
