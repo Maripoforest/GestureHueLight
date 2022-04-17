@@ -106,6 +106,7 @@ void HUEMSG::curlGet(){
 
 std::string HUEMSG::getResponse(void) {
 	std::cout << response << std::endl;
+	gateResponse = response;
     return response;
 }
 

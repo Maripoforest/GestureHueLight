@@ -25,6 +25,7 @@ public:
     void setMessage(std::string _MSG) {MSG = _MSG;}
     
     std::string getResponse(void);
+    std::string gateResponse;
 
 private:
     std::string URL;

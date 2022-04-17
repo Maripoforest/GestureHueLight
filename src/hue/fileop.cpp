@@ -35,8 +35,3 @@ bool logfile::readfile(std::vector<std::string>& lines) {
     return true;
 }
 
-void logfile::writefile(std::string ip, std::string username) {
-    std::ofstream output_file(filename, std::ios::trunc);
-	output_file << ip << "\n" << username;
-	output_file.close();
-}

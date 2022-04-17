@@ -42,3 +42,11 @@ target_link_libraries(event ${CURL_LIBRARIES})
 target_link_libraries(event Qt5::Widgets)
 target_link_libraries(event Qt5::Gui)
 target_link_libraries(event qwt-qt5)
+
+add_executable(testd
+		hue/testhue.cpp
+		hue/huefunc.cpp
+		hue/fileop.cpp
+		hue/newuser.cpp) 
+
+target_link_libraries(testd ${CURL_LIBRARIES})

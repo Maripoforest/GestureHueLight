@@ -45,3 +45,9 @@ target_link_libraries(MLXLib Qt5::Gui)
 target_link_libraries(MLXLib qwt-qt5)
 
 add_test(NAME ANSITest COMMAND ANSIT)
+add_test(NAME HueGetTest COMMAND GETT)
+add_test(NAME HuePutTest COMMAND PUTT)
+add_test(NAME HuePostTest COMMAND POSTT)
+add_test(NAME HueLogTest COMMAND LOGT)
+add_test(NAME HueNewUserRequestTest COMMAND NEWT)
+
