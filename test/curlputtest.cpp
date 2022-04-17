@@ -5,7 +5,7 @@
 BOOST_AUTO_TEST_CASE(GETT){
     HUEMSG hm;
     std::string msg = "thisistest";
-    char rcv[10];
+    std::string rcv = "1234567890";
     hm.setURL("https://httpbin.org/put");
     hm.setMessage("thisistest");
     hm.curlPut();
@@ -15,7 +15,7 @@ BOOST_AUTO_TEST_CASE(GETT){
         rcv[j] = hm.gateResponse[i];
         j++;
     }
-    BOOST_CHECK_EQUAL(strcmp(rcv, msg.c_str()), 0);
+    BOOST_CHECK_EQUAL(strcmp(rcv.c_str(), msg.c_str()), 0);
 
 
 }

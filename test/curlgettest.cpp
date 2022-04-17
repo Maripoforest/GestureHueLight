@@ -5,7 +5,7 @@
 BOOST_AUTO_TEST_CASE(GETT){
     HUEMSG hm;
     std::string msg = "args";
-    char rcv[4];
+    std::string rcv = "1234";
     hm.setURL("https://httpbin.org/get");
     hm.curlGet();
     hm.getResponse();
@@ -16,6 +16,6 @@ BOOST_AUTO_TEST_CASE(GETT){
     }
 
 
-    BOOST_CHECK_EQUAL(strcmp(rcv, msg.c_str()), 0);
+    BOOST_CHECK_EQUAL(strcmp(rcv.c_str(), msg.c_str()), 0);
 
 }

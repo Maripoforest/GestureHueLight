@@ -4,7 +4,9 @@ include_directories (../src
 
 add_definitions (-DBOOST_TEST_DYN_LINK)
 
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 find_package(CURL REQUIRED)
+find_package(Qt5 COMPONENTS Widgets Gui REQUIRED)
 set(CURL_LIBRARY "-lcurl")
 include_directories(${CURL_INCLUDE_DIR})
 
@@ -60,3 +62,15 @@ target_link_libraries (NEWT
                        ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY}
                        )
 target_link_libraries(NEWT ${CURL_LIBRARIES})
+
+add_executable (SENT sensortest.cpp)
+target_link_libraries (SENT
+                        MLXLib
+                       ${Boost_FILESYSTEM_LIBRARY}
+                       ${Boost_SYSTEM_LIBRARY}
+                       ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY}
+                       )
+target_link_libraries(SENT ${CURL_LIBRARIES})
+target_link_libraries(SENT Qt5::Widgets)
+target_link_libraries(SENT Qt5::Gui)
+target_link_libraries(SENT qwt-qt5)

@@ -37,6 +37,10 @@ add_library (MLXLib
                 src/mlx90640/mlx90640_driver.cpp
                 src/mywidget.cpp
                 src/mywidget.h
+                src/hue/fileop.h
+                src/hue/fileop.cpp
+                src/hue/newuser.cpp
+                src/hue/newuser.h
                 src/hue/huefunc.cpp
                 src/hue/huefunc.h)
 
@@ -50,4 +54,5 @@ add_test(NAME HuePutTest COMMAND PUTT)
 add_test(NAME HuePostTest COMMAND POSTT)
 add_test(NAME HueLogTest COMMAND LOGT)
 add_test(NAME HueNewUserRequestTest COMMAND NEWT)
+add_test(NAME SensorTest COMMAND SENT)
 

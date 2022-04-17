@@ -1,8 +1,9 @@
-#define BOOST_TEST_MODULE MAXtests
-#include <boost/test/unit_test.hpp>
+#include "mlx90640/mlx90640_driver.h"
+#include "mywidget.h"
 #include "hue/huefunc.h"
 
-BOOST_AUTO_TEST_CASE(POSTT){
+int main(int argc, char** argv){
+
     HUEMSG hm;
     std::string msg = "thisistest";
     std::string rcv = "1234567890";
@@ -15,6 +16,8 @@ BOOST_AUTO_TEST_CASE(POSTT){
         rcv[j] = hm.gateResponse[i];
         j++;
     }
-    BOOST_CHECK_EQUAL(strcmp(rcv.c_str(), msg.c_str()), 0);
+    
+    std::cout << rcv << msg << std::endl;
 
+    return 0;
 }
