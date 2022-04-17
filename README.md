@@ -12,6 +12,10 @@
         <img src="https://img.shields.io/github/contributors/Maripoforest/GestureHueLight.svg" /></a>
     <a href="https://github.com/Maripoforest/GestureHueLight/issues" alt="Issues">
         <img src="https://img.shields.io/github/issues/Maripoforest/GestureHueLight.svg" /></a>
+    <a href="https://github.com/Maripoforest/GestureHueLight/blob/main/LICENSE" alt="License">
+        <img src="https://img.shields.io/github/license/Maripoforest/GestureHueLight.svg" /></a>
+    <a href="https://github.com/Maripoforest/GestureHueLight/releases" alt="Tag">
+        <img src="https://img.shields.io/github/v/release/Maripoforest/GestureHueLight.svg?color=pink" alt="build status"></a>
 </p>
 
 ## Introduction
@@ -22,8 +26,10 @@ In this case, a camera based gesture control switch came up in our mind.
 It has to be simple to use, flexible enough to change the room brightness, and most important, touchless.
 
 ## Project Flowchart
-
 ![](flowchart2.png)
+
+## Hareware
+<img src="https://github.com/Maripoforest/GestureHueLight/blob/20-license-haiyang/hardware.svg" width="500" height="500">
 
 ## Prerequistes
 **IMPORTANT** 
@@ -43,15 +49,24 @@ sudo apt-get install libi2c-dev
 sudo apt-get install qtdeclarative5-dev-tools libqwt-qt5-dev qtmultimedia5-dev qtbase5-dev
 ```
 
-##  Hue light bulb brightness control: How to use
-At the very first beginning, make the executable:
+4. To enable the tests, remember you have BOOST lib installed:
+```
+sudo apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev
+```
 
+## First things first: Build the program:
 ```
 mkdir build && cd build
 cmake ..
 make
 ```
 
+### 1. Unit Tests
+```
+make test
+```
+
+### 2. Hue light bulb brightness control: How to use
 If you are new user to Hue, this command will automatically set the light bulb ready for you, you just need press the physicall hue button:
 ```
 ./Hue new
@@ -86,13 +101,14 @@ After set IP and username, adjust the brightness like this:
 ```
 **200** is brightness, integer, from 0-255, 0 means off.
 
-## MLX90640 Sensor: How to use:
+### 3. MLX90640 main program: How to use:
 ```
 mkdir build && cd build
 cmake ..
 make
-sudo ./event
+sudo ./main
 ```
+
 ## Sequence diagram
 <img src="https://github.com/Maripoforest/GestureHueLight/blob/main/sequence%20diagram%20for%20data%20transfer.png" width="500px">
 
@@ -111,5 +127,5 @@ Command line tool and library for transferring data with URLs. (since 1998)
  <a href="https://github.com/Maripoforest">Xiangmin Xu</a> <br/>
  <a href="https://github.com/rhythm232">Haiyang You</a> <br/>
  <a href="https://github.com/hjyyjh">Jiyuan He</a> <br/>
- Yilin Zhong</a> <br/>
+
 
