@@ -48,15 +48,19 @@ sudo apt-get install libi2c-dev
 sudo apt-get install qtdeclarative5-dev-tools libqwt-qt5-dev qtmultimedia5-dev qtbase5-dev
 ```
 
-##  Hue light bulb brightness control: How to use
-At the very first beginning, make the executable:
+4. To enable the tests, remember you have BOOST lib installed:
+```
+sudo apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev
+```
 
+## Build the program:
 ```
 mkdir build && cd build
 cmake ..
 make
 ```
 
+###  Hue light bulb brightness control: How to use
 If you are new user to Hue, this command will automatically set the light bulb ready for you, you just need press the physicall hue button:
 ```
 ./Hue new
@@ -91,13 +95,19 @@ After set IP and username, adjust the brightness like this:
 ```
 **200** is brightness, integer, from 0-255, 0 means off.
 
-## MLX90640 Sensor: How to use:
+### MLX90640 Main Program: How to use:
 ```
 mkdir build && cd build
 cmake ..
 make
-sudo ./event
+sudo ./main
 ```
+
+### Unit Tests
+```
+make test
+```
+
 ## Sequence diagram
 <img src="https://github.com/Maripoforest/GestureHueLight/blob/main/sequence%20diagram%20for%20data%20transfer.png" width="500px">
 
