@@ -12,10 +12,8 @@
         <img src="https://img.shields.io/github/contributors/Maripoforest/GestureHueLight.svg" /></a>
     <a href="https://github.com/Maripoforest/GestureHueLight/issues" alt="Issues">
         <img src="https://img.shields.io/github/issues/Maripoforest/GestureHueLight.svg" /></a>
-    <a href="https://github.com/Maripoforest/GestureHueLight/blob/main/LICENSE" alt="License">
-        <img src="https://img.shields.io/github/license/Maripoforest/GestureHueLight.svg" /></a>
-    <a href="https://github.com/Maripoforest/GestureHueLight/releases" alt="Tag">
-        <img src="https://img.shields.io/github/v/release/Maripoforest/GestureHueLight.svg?color=pink" alt="build status"></a>
+   
+    
 </p>
 
 ## Introduction
