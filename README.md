@@ -103,9 +103,6 @@ After set IP and username, adjust the brightness like this:
 
 ### 3. MLX90640 main program: How to use:
 ```
-mkdir build && cd build
-cmake ..
-make
 sudo ./main
 ```
 
