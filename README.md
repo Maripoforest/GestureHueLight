@@ -54,14 +54,19 @@ sudo apt-get install qtdeclarative5-dev-tools libqwt-qt5-dev qtmultimedia5-dev q
 sudo apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev
 ```
 
-## Build the program:
+## First things first: Build the program:
 ```
 mkdir build && cd build
 cmake ..
 make
 ```
 
-###  Hue light bulb brightness control: How to use
+### 1. Unit Tests
+```
+make test
+```
+
+### 2. Hue light bulb brightness control: How to use
 If you are new user to Hue, this command will automatically set the light bulb ready for you, you just need press the physicall hue button:
 ```
 ./Hue new
@@ -96,17 +101,12 @@ After set IP and username, adjust the brightness like this:
 ```
 **200** is brightness, integer, from 0-255, 0 means off.
 
-### MLX90640 Main Program: How to use:
+### 3. MLX90640 main program: How to use:
 ```
 mkdir build && cd build
 cmake ..
 make
 sudo ./main
-```
-
-### Unit Tests
-```
-make test
 ```
 
 ## Sequence diagram
