@@ -28,7 +28,8 @@ It has to be simple to use, flexible enough to change the room brightness, and m
 ## Project Flowchart
 
 ![](flowchart2.png)
-
+## Hareware
+<img src="https://github.com/Maripoforest/GestureHueLight/blob/20-license-haiyang/hardware.svg" width="500" height="500">
 ## Prerequistes
 **IMPORTANT** 
 1. This project has dependencies on [cURL](https://github.com/curl/curl.git). To build cURL, we need the OPENSSL developer kit and curl lib:
@@ -115,5 +116,5 @@ Command line tool and library for transferring data with URLs. (since 1998)
  <a href="https://github.com/Maripoforest">Xiangmin Xu</a> <br/>
  <a href="https://github.com/rhythm232">Haiyang You</a> <br/>
  <a href="https://github.com/hjyyjh">Jiyuan He</a> <br/>
- Yilin Zhong</a> <br/>
+
 
