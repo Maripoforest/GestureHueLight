@@ -13,6 +13,7 @@
 #include "hue/fileop.h"
 #include "hue/newuser.h"
 #include <QLabel>
+#include <ctime>
  
 class MyWidget : public QWidget
 {
@@ -37,8 +38,8 @@ private:
 
     QwtThermo    *thermo;
     QLabel *label;
-    
-    
+
+    int freq = 3;
     int bri = 50;
     bool fr = false;
     int intervalTime = 150;
