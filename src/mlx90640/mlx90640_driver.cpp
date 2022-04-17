@@ -29,7 +29,7 @@
 #include <string.h>
 #include <linux/i2c-dev.h>
 #include <thread>
-#include "mywidget.h"
+#include "../mywidget.h"
 #define MLX_I2C_ADDR 0x33
 
 // I2C

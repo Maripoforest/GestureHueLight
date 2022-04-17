@@ -3,18 +3,16 @@ Arthor: Xiangmin XU (Maripoforest)
 MLX90640 Console print
 */
 
-#include <iostream>
-#include <stdio.h>
-#include <cstdint>
 #include "ansiprint.h"
 
-void ansi_print(float* mlx90640To) {
+int ansi_print(float* mlx90640To) {
     for(int x = 0; x < 32; x++){
             for(int y = 0; y < 24; y++){
                 //std::cout << image[32 * y + x] << ",";
                 float val = mlx90640To[32 * (23-y) + x];
-                if(val > 99.99) val = 99.99;
-                if(val > 32.0){
+                if (val < -20 || val > 300) {return 1;}
+                if (val > 99.99) val = 99.99;
+                if (val > 32.0){
                     //printf(ANSI_COLOR_MAGENTA FMT_STRING ANSI_COLOR_RESET, val);
                     std::cout << ANSI_COLOR_MAGENTA << FMT_STRING ANSI_COLOR_RESET ;
                 }
@@ -49,4 +47,5 @@ void ansi_print(float* mlx90640To) {
         }
         //std::this_thread::sleep_for(std::chrono::milliseconds(20));
         std::cout << "\x1b[33A";
+        return 0;
 }
