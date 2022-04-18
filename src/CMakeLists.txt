@@ -1,7 +1,4 @@
-# Arthor: Xiangmin XU (Maripoforest) Haiyang You
-# CMake file for the project
-
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 2.8)
 
 project(Hue)
 
@@ -42,16 +39,3 @@ target_link_libraries(main ${CURL_LIBRARIES})
 target_link_libraries(main Qt5::Widgets)
 target_link_libraries(main Qt5::Gui)
 target_link_libraries(main qwt-qt5)
-
-add_executable(testd	
-		hue/fileop.cpp
-		hue/huefunc.cpp
-		hue/newuser.cpp
-		testm.cpp
-		mywidget.cpp
-		mlx90640/mlx90640_driver.cpp) 
-
-target_link_libraries(testd ${CURL_LIBRARIES})
-target_link_libraries(testd Qt5::Widgets)
-target_link_libraries(testd Qt5::Gui)
-target_link_libraries(testd qwt-qt5)
