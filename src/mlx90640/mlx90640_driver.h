@@ -108,9 +108,10 @@ public:
 
 private:  
     //
+    bool ffstate = false;
     int state;
     float eTa;
-    float emissivity = 0.8;
+    float emissivity = 1.0;
     uint16_t frame[834];
     static float image[768];
     static uint16_t data[768*sizeof(float)];

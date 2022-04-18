@@ -185,7 +185,7 @@ bool MyWidget::hasValue(float* value) {
 
         for (int i=0;i<32;i++) {
                 for (int j=0;j<24;j++) {
-                        pixel[i][j] = value[32 * (23-j) + i];
+                        pixel[i][j] = value[32 * j + i];
                         if (pixel[i][j] > pixel_max) {
                                 pixel_max = pixel[i][j];
                         }
@@ -196,20 +196,21 @@ bool MyWidget::hasValue(float* value) {
                         if ( i == 16 && j == 12 && pixel[i][j] > 30.0 && pixel[i][j] < 40.0) {
                                 center = true;
                         }
-                        if ( i > 10 && j < 12 && pixel[i][j] > 30.0 && pixel[i][j] < 40.0) {
+                        if ( i > 16 && j < 10 && pixel[i][j] > 30.0 && pixel[i][j] < 40.0) {
                                 rc += 1;
                         }
-                        if ( i < 10 && j < 12 && pixel[i][j] > 30.0 && pixel[i][j] < 40.0) {
+                        if ( i < 16 && j < 10 && pixel[i][j] > 30.0 && pixel[i][j] < 40.0) {
                                 lc += 1;
                         }
                 }
         }
         // std::cout << hotpixel << std::endl;
-
+        std::cout << "rc=" <<rc << "\n" << "lc=" <<lc<<"\n"<<std::endl;
         if(controlling) {
                 hueMsgEnd();
-                if(rc >= 15 && rc - lc > 10){upper_right = true; upper_left = false;}
-                if(lc >= 15 && lc - rc > 10){upper_left = true; upper_right = false;}     
+                
+                if(rc - lc > 15 && lc < 5){upper_right = true; upper_left = false;}
+                if(lc - rc > 15 && rc < 5){upper_left = true; upper_right = false;}     
                 if(hotpixel>30 && hotpixel < 630) {
                         rep += 1;
                         rep %= 60000;
