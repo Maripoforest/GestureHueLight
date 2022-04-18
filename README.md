@@ -6,7 +6,12 @@
 <img src="https://github.com/Maripoforest/GestureHueLight/blob/main/logo2.png" width="400" height="400">
   </p>
 <br/>
-
+<p align="center">
+    <a href="https://youtu.be/0vhuDy584RA">Youtube</a>
+    &nbsp;
+    &nbsp;
+    <a href="https://www.bilibili.com/video/BV1ja411v7GH?share_source=copy_web">Bilibili</a>
+</p>
 <p align="center">
     <a href="https://github.com/Maripoforest/GestureHueLight/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/Maripoforest/GestureHueLight.svg" /></a>
