@@ -11,6 +11,9 @@
     &nbsp;
     &nbsp;
     <a href="https://www.bilibili.com/video/BV1ja411v7GH?share_source=copy_web">Bilibili</a>
+    &nbsp;
+    &nbsp;
+    <a href="https://twitter.com/home">Twitter</a>
 </p>
 <p align="center">
     <a href="https://github.com/Maripoforest/GestureHueLight/graphs/contributors" alt="Contributors">
