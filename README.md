@@ -20,7 +20,7 @@
     <a href="https://github.com/Maripoforest/GestureHueLight/blob/main/LICENSE" alt="License">
         <img src="https://img.shields.io/github/license/Maripoforest/GestureHueLight.svg?color=red" /></a>
     <a href="https://github.com/Maripoforest/GestureHueLight/releases" alt="Tag">
-        <img src="https://img.shields.io/github/v/release/Maripoforest/GestureHueLight.svg?color=pink" alt="build status"></a>
+        <img src="https://img.shields.io/github/v/release/Maripoforest/GestureHueLight?color=pink" alt="build status"></a>
 </p>
 
 ## Introduction
