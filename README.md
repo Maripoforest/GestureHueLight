@@ -115,7 +115,7 @@ sudo ./main
 ```
 
 ## Sequence diagram
-<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/sequence%20diagram%20for%20data%20transfer.png" width="500px">
+<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/sequence%20diagram%20for%20data%20transfer.png" width="800px">
 
 ## References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
