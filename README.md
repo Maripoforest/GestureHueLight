@@ -43,7 +43,7 @@ It has to be simple to use, flexible enough to change the room brightness, and m
 **IMPORTANT** 
 1. This project has dependencies on [cURL](https://github.com/curl/curl.git). To build cURL, we need the OPENSSL developer kit and curl lib:
 ```
-sudo apt-get install libssl-dev
+sudo apt-get install libssl-dev libcurl4-openssl-dev
 sudo apt install curl
 ```
 
