@@ -39,6 +39,7 @@ private:
     QwtThermo    *thermo;
     QLabel *label;
 
+    bool change_flag;
     int freq = 3;
     int bri = 50;
     bool fr = false;

@@ -205,8 +205,9 @@ bool MyWidget::hasValue(float* value) {
                 }
         }
         // std::cout << hotpixel << std::endl;
-        std::cout << "rc=" <<rc << "\n" << "lc=" <<lc<<"\n"<<std::endl;
+        // std::cout << "rc=" <<rc << "\n" << "lc=" <<lc<<"\n"<<std::endl;
         if(controlling) {
+
                 hueMsgEnd();
                 
                 if(rc - lc > 15 && lc < 5){upper_right = true; upper_left = false;}
@@ -216,37 +217,49 @@ bool MyWidget::hasValue(float* value) {
                         rep %= 60000;
                         if (rep % freq == 0) {
                                 if (upper_left && light_stat && !upper_right) {
-                                        if (bri >= 20) {
+                                        if (bri > 20) {
                                                 bri -= 20;
                                         }
-                                        else {bri = 0; light_stat = false;}
+                                        // else {bri = 0; light_stat = false;}
                                         std::cout << bri << "---------\n";
                                         hueThread = new std::thread(exec, this);
                                 }
 
-                                else if (upper_right && !upper_left) {
+                                else if (light_stat && upper_right && !upper_left) {
                                         if (bri <= 230) {
                                                 bri += 20;
-                                                light_stat = true;
                                                 std::cout << bri << "+++++++++\n";
                                                 hueThread = new std::thread(exec, this);
                                         }
                                 }
                         }
                 }
+
                 else if (hotpixel > 700) {
-                        if(light_stat || bri != 0) {
+                        if (light_stat && !change_flag) {
+                                std::cout  << "Off\n";
                                 bri = 0; 
                                 light_stat = false;
                                 hueThread = new std::thread(exec, this);
+                                change_flag = true;
+                        }
+                        else if (!light_stat && !change_flag) {
+                                std::cout  << "On\n";
+                                bri = 20;
+                                light_stat = true;
+                                hueThread = new std::thread(exec, this);
+                                change_flag = true;
                         }
                         
                 }
+
                 else if(rep != 0) {
                         rep = 0;
                         std::cout  << "Reset\n";
+                        change_flag = false;
                 }
         }
+
         this->update();
         thermo->setValue(pixel_max);
         pixel_max = 0;

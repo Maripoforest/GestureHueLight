@@ -1,4 +1,5 @@
-<!-- PROJECT LOGO -->
+ <!-- PROJECT LOGO -->
+
 <h1 align="center">GestureHueLight</h1>
 <p align="center">
 <br/>
@@ -11,6 +12,9 @@
     &nbsp;
     &nbsp;
     <a href="https://www.bilibili.com/video/BV1ja411v7GH?share_source=copy_web">Bilibili</a>
+    &nbsp;
+    &nbsp;
+    <a href="https://twitter.com/home">Twitter</a>
 </p>
 <p align="center">
     <a href="https://github.com/Maripoforest/GestureHueLight/graphs/contributors" alt="Contributors">
@@ -20,7 +24,7 @@
     <a href="https://github.com/Maripoforest/GestureHueLight/blob/main/LICENSE" alt="License">
         <img src="https://img.shields.io/github/license/Maripoforest/GestureHueLight.svg?color=red" /></a>
     <a href="https://github.com/Maripoforest/GestureHueLight/releases" alt="Tag">
-        <img src="https://img.shields.io/github/v/release/Maripoforest/GestureHueLight.svg?color=pink" alt="build status"></a>
+        <img src="https://img.shields.io/github/v/release/Maripoforest/GestureHueLight?color=pink" alt="build status"></a>
 </p>
 
 ## Introduction
@@ -36,11 +40,25 @@ It has to be simple to use, flexible enough to change the room brightness, and m
 ## Hareware
 <img src="https://github.com/Maripoforest/GestureHueLight/blob/20-license-haiyang/hardware.svg" width="500" height="500">
 
+## Camera Box
+This is the simulation of the camera part, which can fix the camera on the plane to reduce the wrong judgment caused by hardware movement.
+The PCB is fixed on the bottom plate, then the pins are soldered on the PCB, the DuPont wire is connected, and the other end is connected to the Raspberry Pi.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/54718648/164205056-f7d400b7-a6ca-442f-baf2-93ae15d35e4f.png" width="200" height="200">
+<img src="https://user-images.githubusercontent.com/54718648/164205138-be7ddbe1-34d0-41db-a206-33604e547bdb.png" width="200" height="200">
+<img src="https://user-images.githubusercontent.com/54718648/164205187-21d6f371-1c66-4fa3-a5e6-1915ffc2aab6.png" width="200" height="200"'>
+<img src="https://user-images.githubusercontent.com/54718648/164205249-45065df7-499d-4b8f-a1c3-53e1a37304a9.png" width="200" height="200">
+                                                                                 
+</p>      
+<p align="center">                                                                                                                                    
+The simulation of camera hardware part
+</p>                                                                                                                                             
+
 ## Prerequistes
 **IMPORTANT** 
 1. This project has dependencies on [cURL](https://github.com/curl/curl.git). To build cURL, we need the OPENSSL developer kit and curl lib:
 ```
-sudo apt-get install libssl-dev
+sudo apt-get install libssl-dev libcurl4-openssl-dev
 sudo apt install curl
 ```
 
@@ -112,7 +130,7 @@ sudo ./main
 ```
 
 ## Sequence diagram
-<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/sequence%20diagram%20for%20data%20transfer.png" width="500px">
+<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/sequence%20diagram%20for%20data%20transfer.png" width="800px">
 
 ## References
 > [Sensor Github Page](https://github.com/melexis/mlx90640-library.git).
@@ -129,5 +147,8 @@ Command line tool and library for transferring data with URLs. (since 1998)
  <a href="https://github.com/Maripoforest">Xiangmin Xu</a> <br/>
  <a href="https://github.com/rhythm232">Haiyang You</a> <br/>
  <a href="https://github.com/hjyyjh">Jiyuan He</a> <br/>
+ <a href="https://github.com/ZhYilin">Yilin Zhong</a> <br/>
 
 
+                                                                                                                                          
+                                                                                                                                          
