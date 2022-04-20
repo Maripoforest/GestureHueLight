@@ -1,0 +1,31 @@
+<html>
+<p>Input Control order
+</p>
+<textarea name="" id="text" cols="40" rows="10">
+    </textarea>
+
+   <button id="save" type="button">save</button>
+
+    <script>　
+
+        document.querySelector('#save').addEventListener('click', saveFile);
+           
+           
+        function saveFile(){
+            var inValue  = document.querySelector('#text').value;
+            var blob = new Blob([inValue],{type: "text/plain;charset=utf-8"});
+            const fileName= "test.txt"
+            if("msSaveOorOpenBlob" in navigator){
+                window.navigator.msSaveOorOpenBlob(blob,fileName);
+            }else{
+                var url = window.URL.createObjectURL(blob);
+                var link = document.createElement('a');
+                link.href = url;
+                link.setAttribute("download",fileName)
+                link.click();
+            }
+            
+        }
+    </script>
+
+</html>
