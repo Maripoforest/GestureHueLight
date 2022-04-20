@@ -40,8 +40,8 @@ It has to be simple to use, flexible enough to change the room brightness, and m
 ## Hareware
 <img src="https://github.com/Maripoforest/GestureHueLight/blob/20-license-haiyang/hardware.svg" width="500" height="500">
 
-## Hareware case
-This is the hardware simulation of the camera part, which can fix the camera on the plane to reduce the wrong judgment caused by hardware movement.
+## Camera Box
+This is the simulation of the camera part, which can fix the camera on the plane to reduce the wrong judgment caused by hardware movement.
 The PCB is fixed on the bottom plate, then the pins are soldered on the PCB, the DuPont wire is connected, and the other end is connected to the Raspberry Pi.
 <p align="center">
 <img src="https://user-images.githubusercontent.com/54718648/164205056-f7d400b7-a6ca-442f-baf2-93ae15d35e4f.png" width="200" height="200">
