@@ -37,7 +37,7 @@ It has to be simple to use, flexible enough to change the room brightness, and m
 ![](flowchart2.png)
 
 ## Hareware
-<img src="https://github.com/Maripoforest/GestureHueLight/blob/20-license-haiyang/hardware.svg" width="500" height="500">
+<img src="https://github.com/Maripoforest/GestureHueLight/blob/main/hardware.svg" width="500" height="500">
 
 ## Prerequistes
 **IMPORTANT** 
